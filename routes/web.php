@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/view','SitioController@view');
+
+Route::get('/viewprivate/{canal}','SitioController@viewprivate');
