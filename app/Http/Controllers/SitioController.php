@@ -9,11 +9,11 @@ class SitioController extends Controller
     //
     public function view()
     {
-        echo "Hola Mundo";
+        return view('PublicGraf/PagePublic');
     }
 
     public function viewprivate(Request $request, $canal)
     {
-        echo "Canal =". $canal;
+        return view('PrivateGraf/PagePrivate',['elCanal'=>$canal]);
     }
 }
