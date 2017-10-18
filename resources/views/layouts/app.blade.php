@@ -19,13 +19,20 @@
 
 <body>
     @section('headerspace')
-        Esta es el titulo de la pagina
+        <header>
+            Este es el titulo de la pagina
+        </header>
+
     @show
     @section('navibar')
-        Esta es la barra de navegación
+        <nav>
+            Esta es la barra de navegación
+        </nav>
     @show
     @section('sidebar')
-        esta es la barra lateral
+        <aside>
+            esta es la barra lateral
+        </aside>
     @show
 
 
@@ -33,7 +40,9 @@
         @yield('content')
     </div>
     @section('footerspace')
-        Este es el footer
+        <footer>
+            Este es el footer
+        </footer>
     @show
 
 </body>
