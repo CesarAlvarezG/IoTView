@@ -18,13 +18,23 @@
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
+    @section('headerspace')
+        Esta es el titulo de la pagina
+    @show
+    @section('navibar')
+        Esta es la barra de navegación
+    @show
     @section('sidebar')
         esta es la barra lateral
     @show
+
+
     <div class="container">
         @yield('content')
     </div>
+    @section('footerspace')
+        Este es el footer
+    @show
 
 </body>
 </html>
