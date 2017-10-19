@@ -33,4 +33,10 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($plainPassword);
     }
+
+
+    public function perfil()
+    {
+        return $this->hasOne('App\perfil');
+    }
 }

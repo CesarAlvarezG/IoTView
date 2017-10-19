@@ -17,7 +17,11 @@ class CreateSistemasTable extends Migration
             $table->increments('id');
             $table->string('Nombre',66);
             $table->string('Descripcion',66);
+            $table->integer('sensor_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('sensor_id')->references('id')->on('sensores')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -28,6 +32,10 @@ class CreateSistemasTable extends Migration
      */
     public function down()
     {
+        Schema::table('sistemas', function (Blueprint $table) {
+            $table->dropForeign(['sensor_id']);
+        });
+
         Schema::dropIfExists('sistemas');
     }
 }

@@ -18,7 +18,11 @@ class CreateSensoresTable extends Migration
             $table->string('Nombre',66);
             $table->enum('Tipo',['Continuo','Discreto']);
             $table->geometry('Direccion');
+            $table->integer('medida_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('medida_id')->references('id')->on('medidas')
+                ->OnUpdate('cascade')->OnDelete('cascade');
         });
     }
 
@@ -29,6 +33,10 @@ class CreateSensoresTable extends Migration
      */
     public function down()
     {
+        Schema::table('sensore', function (Blueprint $table) {
+            $table->dropForeign(['medida_id']);
+        });
+
         Schema::dropIfExists('sensores');
     }
 }

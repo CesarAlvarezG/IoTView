@@ -17,7 +17,11 @@ class CreatePerfilesTable extends Migration
             $table->increments('id');
             $table->enum('Tipo',['Admin','Persona','IoTSistem']);
             $table->string('Direccion',66);
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users') //FK
+                ->onUpDate('cascade')->onDelete('cascade');
         });
     }
 
@@ -28,6 +32,10 @@ class CreatePerfilesTable extends Migration
      */
     public function down()
     {
+        Schema::table('perfiles', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
+
         Schema::dropIfExists('perfiles');
     }
 }
