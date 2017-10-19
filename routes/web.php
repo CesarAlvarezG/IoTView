@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/view','SitioController@view');
 
 Route::get('/viewprivate/{canal}','SitioController@viewprivate');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
