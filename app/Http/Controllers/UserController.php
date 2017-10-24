@@ -25,4 +25,9 @@ class UserController extends Controller
         Session::flash('flash_message', 'User successfully added!');
         return redirect('/home');
     }
+    public function index(Request $request)
+    {
+        $users = User::all();
+        return view('user.index', ['list' => $users]);
+    }
 }
