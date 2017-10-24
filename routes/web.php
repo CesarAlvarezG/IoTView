@@ -22,3 +22,13 @@ Route::get('/viewprivate/{canal}','SitioController@viewprivate');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('users', 'UserController');
+
+Route::resource('perfiles','PerfilController');
+
+Route::resource('sitemas','SistemaController');
+
+Route::resource('sensores','SensorController');
+
+Route::resource('medidas','MedidaController');
