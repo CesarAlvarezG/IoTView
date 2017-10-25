@@ -9,7 +9,7 @@
   <meta name="Ing. César Augusto Álvarez Gaspar" content="AppIoT">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
-  <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('headspace')
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -19,14 +19,14 @@
 </head>
 
 <body>
-    @section('headerspace')
-        <header>
-            Este es el titulo de la pagina
-        </header>
 
-    @show
+    <header>
+        Este es el titulo de la pagina
+        @yield('headerspace')
+    </header>
+
     @section('navibar')
-        <nav>
+    <nav>
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -64,14 +64,12 @@
                 </div>
             </div>
             Esta es la barra de navegación
-        </nav>
-    @show
-    @section('sidebar')
-        <aside>
-            esta es la barra lateral
-        </aside>
-    @show
-
+    @yield('navibar')
+    </nav>
+    <aside>
+        @yield('sidebar')
+        esta es la barra lateral
+    </aside>
 
     <div class="container">
         <!-- Espacio para los mensajes flash enviados entre solicitudes -->
@@ -82,11 +80,11 @@
     @endif
         @yield('content')
     </div>
-    @section('footerspace')
-        <footer>
-            Este es el footer
-        </footer>
-    @show
+
+    <footer>
+        @yield('footerspace')
+        Este es el footer
+    </footer>
 
 </body>
 </html>
