@@ -32,8 +32,6 @@
 
 
 @section('sidebar')
-
-    @parent
     <p>Este es el texto de la barra lateral</p>
 
 @endsection

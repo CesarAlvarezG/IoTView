@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Aplición Web para el Internet de las Cosas IoT - @yield('title')</title>
+  <title>Aplicación Web para el Internet de las Cosas - @yield('title')</title>
   <meta name="description" content="IoTView">
   <meta name="Ing. César Augusto Álvarez Gaspar" content="AppIoT">
 
@@ -21,7 +21,13 @@
 <body>
 
     <header>
-        Este es el titulo de la pagina
+
+        <h1>
+            IoTView
+        </h1>
+        <h2>
+            Aplicación Web para el internet de las cosas
+        </h2>
         @yield('headerspace')
     </header>
 
@@ -63,7 +69,6 @@
                     </ul>
                 </div>
             </div>
-            Esta es la barra de navegación
     @yield('navibar')
     </nav>
     <aside>
@@ -83,7 +88,10 @@
 
     <footer>
         @yield('footerspace')
-        Este es el footer
+        <h3>
+            Desarrollado por: <strong>César Augusto Álvarez Gaspar</strong>
+        </h3>
+        <a mailto="ing.cesaralvarezg@gmail.com">ing.cesaralvarezg@gmail.com</a>
     </footer>
 
 </body>
