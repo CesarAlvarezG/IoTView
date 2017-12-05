@@ -25,8 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
 
-Route::resource('perfiles','PerfilController');
-
 Route::resource('sistemas','SistemaController');
 
 Route::resource('sensores','SensorController');

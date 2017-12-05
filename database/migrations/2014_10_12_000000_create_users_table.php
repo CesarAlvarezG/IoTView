@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
+            $table->integer('role')->default(2);//1:Admin, 2:Persona, 3:IoTSistem
+            $table->string('Direccion',66);
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+         Schema::dropIfExists('users');
     }
 }
