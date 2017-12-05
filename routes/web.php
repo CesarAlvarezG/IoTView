@@ -27,7 +27,7 @@ Route::resource('users', 'UserController');
 
 Route::resource('perfiles','PerfilController');
 
-Route::resource('sitemas','SistemaController');
+Route::resource('sistemas','SistemaController');
 
 Route::resource('sensores','SensorController');
 
