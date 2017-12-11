@@ -16,9 +16,9 @@ class CreateSensoresTable extends Migration
         Schema::create('sensores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nombre',66);
-            $table->enum('Tipo',['Continuo','Discreto']);
-            $table->geometry('Direccion');
-            $table->integer('medida_id')->unsigned();
+            $table->enum('Tipo',['Continuo','Discreto'])->default('Continuo');
+            $table->geometry('Direccion')->nullable();
+            $table->integer('medida_id')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('medida_id')->references('id')->on('medidas')
