@@ -15,7 +15,7 @@ class CreateMedidasTable extends Migration
     {
         Schema::create('medidas', function (Blueprint $table) {
             $table->increments('id');
-            $table->float('valor',8,4);
+            $table->float('valor',8,4)->default(0);
             $table->timestamps();
         });
     }

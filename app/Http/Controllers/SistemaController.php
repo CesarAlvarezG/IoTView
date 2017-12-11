@@ -21,7 +21,7 @@ class SistemaController extends Controller
         ]);
         $input = $request->all();
         Sistema::create($input);
-        Session::flash('flash_message', 'Sistema agregado exitosamente!');
+        Session::flash('flash_message', 'Sistema agregado!');
         return redirect('/home');
     }
 }
