@@ -17,7 +17,7 @@ class CreateSistemasTable extends Migration
             $table->increments('id');
             $table->string('Nombre',66);
             $table->string('Descripcion',66);
-            $table->integer('sensor_id')->unsigned();
+            $table->integer('sensor_id')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('sensor_id')->references('id')->on('sensores')
