@@ -26,6 +26,11 @@
         {!! Form::label('password', 'Password', ['class' => 'control-label']) !!}
         {!! Form::password('password', ['class' => 'form-control']) !!}
     </div>
+    <div class="form-group">
+        {!! Form::label('Direccion', 'Dirección', ['class' => 'control-label']) !!}
+        {!! Form::text('Direccion', null, ['class' => 'form-control']) !!}
+    </div>
+
     {!! Form::submit('Crear un nuevo usuario', ['class' => 'btn btn-primary']) !!}
     {!! Form::close() !!}
 
