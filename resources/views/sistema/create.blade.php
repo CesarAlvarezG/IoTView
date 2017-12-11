@@ -7,7 +7,7 @@
 <h1>Agregar un nuevo sistema</h1>
 <p class="lead">Inserte la información del nuevo sistema.</p>
 <hr>
-    {!! Form::open(['route' => 'Sistema.store']) !!}
+    {!! Form::open(['route' => 'sistemas.store']) !!}
 <div class="form-group">
     {!! Form::label('Nombre', 'Nombre', ['class' => 'control-label']) !!}
     {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}

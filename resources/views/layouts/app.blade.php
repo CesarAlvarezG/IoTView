@@ -88,9 +88,9 @@
 
     <footer>
         @yield('footerspace')
-        <h3>
+        <h1>
             Desarrollado por: <strong>César Augusto Álvarez Gaspar</strong>
-        </h3>
+        </h1>
         <a mailto="ing.cesaralvarezg@gmail.com">ing.cesaralvarezg@gmail.com</a>
     </footer>
 
