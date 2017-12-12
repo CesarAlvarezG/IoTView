@@ -18,6 +18,8 @@
 <div class="form-group">
     {!! Form::label('Nombre', 'Nombre', ['class' => 'control-label']) !!}
     {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}
+    {!! Form::label('Nombre', 'Tipo de señal', ['class' => 'control-label']) !!}
+    {!! Form::select('Tipo', ['Continuo' => 'Continuo', 'Discreto' => 'Discreto'], 'Continuo'); !!}
 </div>
 {!! Form::submit('Crear un nuevo sensor', ['class' => 'btn btn-primary']) !!}
 {!! Form::close() !!}
