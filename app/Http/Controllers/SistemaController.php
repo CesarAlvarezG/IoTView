@@ -17,11 +17,16 @@ class SistemaController extends Controller
     {
         $this->validate($request, [
         'Nombre' => 'required | string | alpha_dash | max:66',
-        'Descripcion' => 'required | string | alpha_dash | max:66',
+        'Descripcion' => 'required | string | max:66',
         ]);
         $input = $request->all();
         Sistema::create($input);
         Session::flash('flash_message', 'Sistema agregado!');
         return redirect('/home');
+    }
+    public function index(Request $request)
+    {
+        $sistemas = Sistema::all();
+        return view('sistema.index', ['list' => $sistemas]);
     }
 }
