@@ -18,11 +18,13 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required | string | alpha_dash | max:66',
             'email' => 'required | email| unique:users',
+            'Direccion' => 'required | string | alpha_dash | max:66',
             'password' => 'required | string | min:8 | max:64',
+            'role'=> 'integer',
         ]);
         $input = $request->all();
         User::create($input);
-        Session::flash('flash_message', 'User successfully added!');
+        Session::flash('flash_message', 'Usuario exitosamente agregado!');
         return redirect('/home');
     }
     public function index(Request $request)

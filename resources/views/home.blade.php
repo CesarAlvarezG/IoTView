@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Estas logueado!<br>
+                    <br>
+                    <ol>
+                    <ul><a href="{!! url('users/') !!}">Manejo de usuarios</a></ul>.
+                    </ol>
                 </div>
             </div>
         </div>
