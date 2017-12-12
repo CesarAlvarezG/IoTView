@@ -11,6 +11,8 @@
     @foreach($list as $user)
         <h3>{{ $user->name }}</h3>
         <p>{{ $user->email }}</p>
+        <p>{{ $user->Direccion }}</p>
+        <p>{{ $user->role }}</p>
         <p>
         <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary">Ver Usuario</a>
         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Editar Usuario</a>
