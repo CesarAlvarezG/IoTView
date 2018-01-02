@@ -23,4 +23,9 @@ class MedidaController extends Controller
         Session::flash('flash_message', 'Sistema agregado exitosamente!');
         return redirect('/home');
     }
+    public function index(Request $request)
+    {
+        $medidas = Medida::all();
+        return view('medida.index', ['list' => $medidas]);
+    }
 }

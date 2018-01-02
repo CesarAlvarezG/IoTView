@@ -20,7 +20,7 @@ class CreateSistemasTable extends Migration
             $table->integer('sensor_id')->unsigned()->nullable();
             $table->timestamps();
 
-            $table->foreign('sensor_id')->references('id')->on('sensores')
+            $table->foreign('sensor_id')->references('id')->on('sensors')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

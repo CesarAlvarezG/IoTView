@@ -20,7 +20,6 @@ class UserController extends Controller
             'email' => 'required | email| unique:users',
             'Direccion' => 'required | string | alpha_dash | max:66',
             'password' => 'required | string | min:8 | max:64',
-            'role'=> 'integer',
         ]);
         $input = $request->all();
         User::create($input);

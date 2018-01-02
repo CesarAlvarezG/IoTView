@@ -16,12 +16,17 @@ class SensorController extends Controller
   public function store(Request $request)
     {
         $this->validate($request, [
-        'name' => 'required | string | alpha_dash | max:66',
+        'Nombre' => 'required | string | max:66',
+        'Tipo' =>'required',
         ]);
         $input = $request->all();
         Sensor::create($input);
         Session::flash('flash_message', 'Sensor exitosamente creado!');
         return redirect('/home');
     }
-
+    public function index(Request $request)
+    {
+        $sensors = Sensor::all();
+        return view('sensor.index', ['list' => $sensors]);
+    }
 }

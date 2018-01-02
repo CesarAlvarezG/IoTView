@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSensoresTable extends Migration
+class CreateSensorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateSensoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('sensores', function (Blueprint $table) {
+        Schema::create('sensors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nombre',66);
-            $table->enum('Tipo',['Continuo','Discreto'])->default('Continuo');
-            $table->geometry('Direccion')->nullable();
+            $table->string('Nombre');
+            $table->string('Tipo')->default('Continuo');
+            //$table->geometry('Direccion')->nullable();
             $table->integer('medida_id')->unsigned()->nullable();
             $table->timestamps();
-
             $table->foreign('medida_id')->references('id')->on('medidas')
                 ->OnUpdate('cascade')->OnDelete('cascade');
         });
@@ -33,10 +32,10 @@ class CreateSensoresTable extends Migration
      */
     public function down()
     {
-        Schema::table('sensores', function (Blueprint $table) {
+        Schema::table('sensors', function (Blueprint $table) {
             $table->dropForeign(['medida_id']);
         });
 
-        Schema::dropIfExists('sensores');
+        Schema::dropIfExists('sensors');
     }
 }
