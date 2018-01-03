@@ -16,7 +16,10 @@ class CreateMedidasTable extends Migration
         Schema::create('medidas', function (Blueprint $table) {
             $table->increments('id');
             $table->float('valor',8,4)->default(0);
+            $table->integer('sensor_id')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('sensor_id')->references('')->on('sensors');
         });
     }
 
@@ -27,6 +30,9 @@ class CreateMedidasTable extends Migration
      */
     public function down()
     {
+        Schema::table('medidas',function (Blueprint $table){
+           $table->dropForeign(['sensor_id']);
+        });
         Schema::dropIfExists('medidas');
     }
 }

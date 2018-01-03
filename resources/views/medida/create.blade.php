@@ -11,13 +11,13 @@
     @endif
 
 
-<h1>Agregar un nuevo sensor</h1>
+<h1>Agregar una nueva medida</h1>
 <p class="lead">Inserte la información de la nueva medida.</p>
 <hr>
     {!! Form::open(['route' => 'medidas.store']) !!}
 <div class="form-group">
-    {!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}
-    {!! Form::number('name', 'valor') !!}
+    Valor:
+    {!! Form::number('valor','0.0',['step'=>"0.01",'required'=>'autofocus']) !!}
 </div>
 {!! Form::submit('Crear una nueva medida', ['class' => 'btn btn-primary']) !!}
 {!! Form::close() !!}

@@ -17,10 +17,11 @@ class MedidaController extends Controller
     {
         $this->validate($request, [
         'valor' => 'required',
+
         ]);
         $input = $request->all();
         Medida::create($input);
-        Session::flash('flash_message', 'Sistema agregado exitosamente!');
+        Session::flash('flash_message', 'Medida agregada exitosamente!');
         return redirect('/home');
     }
     public function index(Request $request)
