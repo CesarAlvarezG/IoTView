@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\sensor;
 use Session;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class SensorController extends Controller
 {
@@ -28,5 +29,17 @@ class SensorController extends Controller
     {
         $sensors = Sensor::all();
         return view('sensor.index', ['list' => $sensors]);
+    }
+    public function show(Request $request,$id)
+    {
+        try{
+            $sensor = Sensor::findOrFail($id);
+            return view('sensor.show',['data'=>$sensor]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message',"El sensor ($id) no se ha encontrado");
+            return redirect()->back();
+        }
     }
 }

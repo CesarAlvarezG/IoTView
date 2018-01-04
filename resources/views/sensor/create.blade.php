@@ -14,7 +14,7 @@
 <h1>Agregar un nuevo sensor</h1>
 <p class="lead">Inserte la información del nuevo sensor.</p>
 <hr>
-    {!! Form::open(['route' => 'sensores.store']) !!}
+    {!! Form::open(['route' => 'sensors.store']) !!}
 <div class="form-group">
     {!! Form::label('Nombre', 'Nombre', ['class' => 'control-label']) !!}
     {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}

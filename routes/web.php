@@ -27,6 +27,6 @@ Route::resource('users', 'UserController');
 
 Route::resource('sistemas','SistemaController');
 
-Route::resource('sensores','SensorController');
+Route::resource('sensors','SensorController');
 
 Route::resource('medidas','MedidaController');
