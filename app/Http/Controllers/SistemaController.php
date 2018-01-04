@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\sistema;
 use Session;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class SistemaController extends Controller
 {
@@ -28,5 +29,17 @@ class SistemaController extends Controller
     {
         $sistemas = Sistema::all();
         return view('sistema.index', ['list' => $sistemas]);
+    }
+    public function show(Request $request,$id)
+    {
+        try{
+            $sistema = Sistema::findOrFail($id);
+            return view('sistema.show',['data'=>$sistema]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message',"El sistema ($id) no se ha encontrado");
+            return redirect()->back();
+        }
     }
 }
