@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\medida;
 use Session;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MedidaController extends Controller
 {
@@ -28,5 +29,17 @@ class MedidaController extends Controller
     {
         $medidas = Medida::all();
         return view('medida.index', ['list' => $medidas]);
+    }
+    public function show(Request $request,$id)
+    {
+        try{
+            $medida = Medida::findOrFail($id);
+            return view('medida.show',['data'=>$medida]);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message',"La medida ($id) no se ha encontrado");
+            return redirect()->back();
+        }
     }
 }
