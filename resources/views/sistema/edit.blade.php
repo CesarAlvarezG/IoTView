@@ -2,7 +2,7 @@
 @section('content')
 
 
-<h1>Editar usuario</h1>
+<h1>Editar sistema</h1>
 <p class="lead">Editar este sistema.
 <a href="{{ route('sistemas.index') }}">Regresar a todos los sistemas.</a></p>
 <hr>
