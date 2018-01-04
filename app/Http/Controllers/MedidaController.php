@@ -42,4 +42,32 @@ class MedidaController extends Controller
             return redirect()->back();
         }
     }
+    public function edit(Request $request, $id)
+    {
+        try{
+            $medida=Medida::findOrFail($id);
+            return view('medida.edit',['data'=>$medida]);
+        }catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message',"La medida ($id) no pudo ser editada");
+            return redirect()->back();
+        }
+    }
+    public function update(Request $request,$id)
+    {
+        try{
+            $medida=Medida::findOrFail($id);
+            $this->validate($request, [
+                'valor' => 'required',
+        ]);
+        $input = $request->all();
+        $medida->fill($input)->save();
+        Session::flash('flash_message', 'Medida exitosamente editada!');
+        return redirect('/home');
+        }catch(ModelNotFoundExcetion $e)
+        {
+            Session::flash('flash_message','La medida ($id) no pudo ser editada');
+            return redirect()->back();
+        }
+    }
 }
