@@ -42,4 +42,33 @@ class SensorController extends Controller
             return redirect()->back();
         }
     }
+    public function edit(Request $request, $id)
+    {
+        try{
+            $sensor=Sensor::findOrFail($id);
+            return view('sensor.edit',['data'=>$sensor]);
+        }catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message',"El sensor ($id) no pudo ser editado");
+            return redirect()->back();
+        }
+    }
+    public function update(Request $request,$id)
+    {
+        try{
+            $sensor=Sensor::findOrFail($id);
+            $this->validate($request, [
+                'Nombre' => 'required | string | max:66',
+                'Tipo' =>'required',
+        ]);
+        $input = $request->all();
+        $sensor->fill($input)->save();
+        Session::flash('flash_message', 'Sensor exitosamente editado!');
+        return redirect('/home');
+        }catch(ModelNotFoundExcetion $e)
+        {
+            Session::flash('flash_message','El sensor ($id) no pudo ser editado');
+            return redirect()->back();
+        }
+    }
 }
