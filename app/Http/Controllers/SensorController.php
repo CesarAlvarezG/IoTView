@@ -71,4 +71,19 @@ class SensorController extends Controller
             return redirect()->back();
         }
     }
+    public function destroy(Request $request, $id)
+    {
+        try
+        {
+            $sensor = Sensor::findOrFail($id);
+            $sensor->delete();
+            Session::flash('flash_message', 'Sensor correctamente borrado!');
+            return redirect('/home');
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "El sensor ($id) no fue borrado!");
+            return redirect()->back();
+        }
+    }
 }
