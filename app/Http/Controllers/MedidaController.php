@@ -70,4 +70,19 @@ class MedidaController extends Controller
             return redirect()->back();
         }
     }
+    public function destroy(Request $request, $id)
+    {
+        try
+        {
+            $medida = Medida::findOrFail($id);
+            $medida->delete();
+            Session::flash('flash_message', 'Medida correctamente borrada!');
+            return redirect('/home');
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "La medida ($id) no fue borrada!");
+            return redirect()->back();
+        }
+    }
 }
