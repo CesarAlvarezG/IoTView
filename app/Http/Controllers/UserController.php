@@ -75,4 +75,19 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+    public function destroy(Request $request, $id)
+    {
+        try
+        {
+            $user = User::findOrFail($id);
+            $user->delete();
+            Session::flash('flash_message', 'Usuario correctamente borrado!');
+            return redirect('/home');
+        }
+        catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "El usuario ($id) no fue borrado!");
+            return redirect()->back();
+        }
+    }
 }
