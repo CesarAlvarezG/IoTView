@@ -28,20 +28,13 @@
         chart.render();
     }
     </script>
-
-<div>
-    <table>
-        @foreach($medidas as $medida)
-            <tr>
-                <td> <p>{{!! $medida->valor !!}}</p></td>
-            </tr>
-        @endforeach
-    </table>
-</div>
-
-
-
 @endsection
+
+
+
+
+
+
 
 
 
@@ -56,7 +49,19 @@
 
     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     <p>El canal enviado es: <span style="font-weight: bold; color: red;">
-        <?php echo  $elCanal; ?></style>.
+        El canal es {{$elCanal}}.
         </p>
+<div>
+    <h1>Los datos son:</h1>
+
+    <table>
+        @foreach($medidas as $medida)
+            <tr>
+                <td> <p> {{ $medida->valor }} </p></td>
+            </tr>
+        @endforeach
+    </table>
+</div>
+
 
 @endsection
