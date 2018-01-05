@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\medida;
 
 class SitioController extends Controller
 {
@@ -14,6 +15,13 @@ class SitioController extends Controller
 
     public function viewprivate(Request $request, $canal)
     {
-        return view('PrivateGraf/PagePrivate',['elCanal'=>$canal]);
+        try{
+            $medidas=Medida::all();
+            return view('PrivateGraf/PagePrivate',['elCanal'=>$canal,'medidas'=>$medidas]);
+        }catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message',"El canal ($id) no puede ser vista");
+            return redirect()->back();
+        }
     }
 }

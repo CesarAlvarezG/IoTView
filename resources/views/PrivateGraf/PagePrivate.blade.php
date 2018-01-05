@@ -28,7 +28,22 @@
         chart.render();
     }
     </script>
+
+<div>
+    <table>
+        @foreach($medidas as $medida)
+            <tr>
+                <td> <p>{{!! $medida->valor !!}}</p></td>
+            </tr>
+        @endforeach
+    </table>
+</div>
+
+
+
 @endsection
+
+
 
 
 @section('sidebar')

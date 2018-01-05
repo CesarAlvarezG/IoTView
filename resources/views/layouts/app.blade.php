@@ -92,6 +92,7 @@
             Desarrollado por: <strong>César Augusto Álvarez Gaspar</strong>
         </h1>
         <a mailto="ing.cesaralvarezg@gmail.com">ing.cesaralvarezg@gmail.com</a>
+            <div><img src="{!! url('imagenes/CAAG.png') !!}" width="400"  height="200" alt="CAAG"/></div>
     </footer>
 
 </body>
