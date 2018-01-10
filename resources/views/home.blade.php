@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('sidebar')
+    <ol>
+        <ul><a href="{!! url('users/') !!}">Nuevo usuario</a></ul>.
+        <ul><a href="{!! url('sistemas/') !!}">Nuevo sistema</a></ul>.
+        <ul><a href="{!! url('sensors/') !!}">Nuevo sensor</a></ul>.
+        <ul><a href="{!! url('medidas/') !!}">Nueva medida</a></ul>.
+    </ol>
+
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -17,7 +27,10 @@
                     Estas logueado!<br>
                     <br>
                     <ol>
-                    <ul><a href="{!! url('users/') !!}">Manejo de usuarios</a></ul>.
+                        <ul><a href="{!! url('users/') !!}">Manejo de usuarios</a></ul>.
+                        <ul><a href="{!! url('sistemas/') !!}">Manejo de sistemas</a></ul>.
+                        <ul><a href="{!! url('sensors/') !!}">Manejo de sensores</a></ul>.
+                        <ul><a href="{!! url('medidas/') !!}">Manejo de medidas</a></ul>.
                     </ol>
                 </div>
             </div>
