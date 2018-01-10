@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\medida;
+use App\sensor;
 use Session;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -12,7 +13,8 @@ class MedidaController extends Controller
     //
     public function create(Request $request)
     {
-        return view('medida.create');
+        $sensores=Sensor::all();
+        return view('medida.create',['sensores'=>$sensores]);
     }
     public function store(Request $request)
     {

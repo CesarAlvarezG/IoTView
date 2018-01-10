@@ -9,7 +9,7 @@ class medida extends Model
     //
 
     protected $fillable = [
-        'valor'
+        'valor','sensor_id'
     ];
 
     public function pertenece()
