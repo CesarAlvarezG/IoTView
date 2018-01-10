@@ -17,7 +17,7 @@ class SistemaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'Nombre' => 'required | string | alpha_dash | max:66',
+        'Nombre' => 'required | string | max:66',
         'Descripcion' => 'required | string | max:66',
         ]);
         $input = $request->all();
