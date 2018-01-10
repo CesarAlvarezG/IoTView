@@ -20,13 +20,13 @@
 
 <body>
 
-    <header>
+    <header align="center">
 
         <h1>
-            IoTView
+            <strong>IoTView</strong>
         </h1>
         <h2>
-            Aplicación Web para el internet de las cosas
+            Aplicación Web para el Internet de las Cosas
         </h2>
         @yield('headerspace')
     </header>
@@ -73,7 +73,7 @@
     </nav>
     <aside>
         @yield('sidebar')
-        esta es la barra lateral
+
     </aside>
 
     <div class="container">
@@ -83,16 +83,20 @@
             {{ Session::get('flash_message') }}
         </article>
     @endif
-        @yield('content')
+        <section>
+            @yield('content')
+        </section>
+
     </div>
 
-    <footer>
+    <footer align="center">
         @yield('footerspace')
         <h1>
             Desarrollado por: <strong>César Augusto Álvarez Gaspar</strong>
         </h1>
+
         <a mailto="ing.cesaralvarezg@gmail.com">ing.cesaralvarezg@gmail.com</a>
-            <div><img src="{!! url('imagenes/CAAG.png') !!}" width="400"  height="200" alt="CAAG"/></div>
+            <div><img src="{!! url('imagenes/CAAG.png') !!}" width="200"  height="100" alt="CAAG" /></div>
     </footer>
 
 </body>
