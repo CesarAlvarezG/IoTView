@@ -10,7 +10,14 @@ class SitioController extends Controller
     //
     public function view()
     {
-        return view('PublicGraf/PagePublic');
+        try{
+            $medida=Medida::orderBy('created_at','desc')->first();
+            return view('PublicGraf/PagePublic',['medida'=>$medida]);
+        }catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message',"La pagina publica no puede ser vista");
+            return redirect()->back();
+        }
     }
 
     public function viewprivate(Request $request, $canal)
