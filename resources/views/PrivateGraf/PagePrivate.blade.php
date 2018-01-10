@@ -16,11 +16,9 @@
                 // Change type to "doughnut", "line", "splineArea", etc.
                 type: "line",
                 dataPoints: [
-                    { label: "Sensor 1",  y: 45  },
-                    { label: "Sensor 2", y: 15  },
-                    { label: "Sensor 3", y: 25  },
-                    { label: "Sensor 4",  y: 30  },
-                    { label: "Sensor 5",  y: 28  }
+                    @foreach($medidas as $medida)
+                            { label: "{{$medida->id}}",  y: {{ $medida->valor }}  },
+                    @endforeach
                 ]
             }
             ]
@@ -47,6 +45,8 @@
 
 @section('content')
 
+
+
     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     <p>El canal enviado es: <span style="font-weight: bold; color: red;">
         El canal es {{$elCanal}}.
@@ -54,14 +54,18 @@
 <div>
     <h1>Los datos son:</h1>
 
-    <table>
+    <table id="datos" border="1">
+        <tr><th>Creado</th><th>Valor</th></tr>
         @foreach($medidas as $medida)
             <tr>
-                <td> <p> {{ $medida->valor }} </p></td>
+                <td>{{$medida->created_at}}</td><td> <p> {{ $medida->valor }} </p></td>
             </tr>
         @endforeach
     </table>
 </div>
+
+
+
 
 
 @endsection
