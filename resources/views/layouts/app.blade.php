@@ -10,6 +10,17 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+ <style>
+    section{
+        float :left;
+        width: 80%;
+    }
+    aside{
+        float: left;
+        width: 15%;
+        margin-left: 5%;
+    }
+    </style>
     @yield('headspace')
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>

@@ -20,7 +20,7 @@ class MedidaController extends Controller
     {
         $this->validate($request, [
         'valor' => 'required',
-
+        'sensor_id'=>'required',
         ]);
         $input = $request->all();
         Medida::create($input);
@@ -30,13 +30,15 @@ class MedidaController extends Controller
     public function index(Request $request)
     {
         $medidas = Medida::all();
-        return view('medida.index', ['list' => $medidas]);
+        $sensores=Sensor::all();
+        return view('medida.index', ['list' => $medidas,'sensores'=>$sensores]);
     }
     public function show(Request $request,$id)
     {
         try{
             $medida = Medida::findOrFail($id);
-            return view('medida.show',['data'=>$medida]);
+            $sensor=Sensor::find($medida->sensor_id);
+            return view('medida.show',['data'=>$medida,'sensor'=>$sensor]);
         }
         catch(ModelNotFoundException $e)
         {
@@ -48,7 +50,8 @@ class MedidaController extends Controller
     {
         try{
             $medida=Medida::findOrFail($id);
-            return view('medida.edit',['data'=>$medida]);
+            $sensores=Sensor::all();
+            return view('medida.edit',['data'=>$medida,'sensores'=>$sensores]);
         }catch(ModelNotFoundException $e)
         {
             Session::flash('flash_message',"La medida ($id) no pudo ser editada");

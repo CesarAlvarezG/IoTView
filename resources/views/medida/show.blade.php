@@ -9,6 +9,11 @@
 <table class="table table-striped table-hover">
 
 <tr>
+    <td>Sensor</td>
+    <td>{{ $sensor->Nombre }}</td>
+</tr>
+
+<tr>
     <td>Created At</td>
     <td>{{ $data->created_at }}</td>
 </tr>
