@@ -19,6 +19,9 @@ Route::get('/view','SitioController@view');
 
 Route::get('/viewprivate/{canal}','SitioController@viewprivate');
 
+Route::get('/iot','IotController@leer');
+Route::put('/iot','IotController@escribir');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
