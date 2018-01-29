@@ -20,7 +20,7 @@ Route::get('/view','SitioController@view');
 Route::get('/viewprivate/{canal}','SitioController@viewprivate');
 
 Route::get('/iot','IotController@leer');
-Route::put('/iot','IotController@escribir');
+Route::get('/iot/{sensor}/{medidad}','IotController@escribir');
 
 Auth::routes();
 

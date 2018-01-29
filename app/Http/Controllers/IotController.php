@@ -13,9 +13,9 @@ class IotController extends Controller
         $medida=Medida::orderBy('created_at','desc')->first();
         echo $medida->valor;
     }
-    public function escribir(Request $request)
+    public function escribir(Request $request,$sensor,$medida)
     {
-        echo $request;
+        Medida::create(array('valor'=>$medida,'sensor_id'=>$sensor));
     }
 
 }

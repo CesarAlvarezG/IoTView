@@ -23,7 +23,7 @@ class SitioController extends Controller
     public function viewprivate(Request $request, $canal)
     {
         try{
-            $medidas=Medida::all();
+            $medidas=Medida::where('sensor_id',$canal)->get();
             return view('PrivateGraf/PagePrivate',['elCanal'=>$canal,'medidas'=>$medidas]);
         }catch(ModelNotFoundException $e)
         {
