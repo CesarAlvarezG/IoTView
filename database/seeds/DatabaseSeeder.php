@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
-        User::create(array('name'=>'SuperAdmin','email'=>'ejemplo@correo.com','password'=>'123456','role'=>'1','Direccion'=>'Calle real'));
+        User::create(array('name'=>'Admin','email'=>'admin@correo.com','password'=>'12345678','role'=>'1','Direccion'=>'Armenia'));
     }
 }
