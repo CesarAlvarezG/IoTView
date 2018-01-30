@@ -18,7 +18,6 @@ class CreateMedidasTable extends Migration
             $table->float('valor',8,4)->default(0);
             $table->integer('sensor_id')->unsigned()->nullable();
             $table->timestamps();
-
             $table->foreign('sensor_id')->references('id')->on('sensors');
         });
     }
