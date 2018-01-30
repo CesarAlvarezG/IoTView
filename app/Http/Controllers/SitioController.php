@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\medida;
+use App\sensor;
 
 class SitioController extends Controller
 {
@@ -24,6 +25,10 @@ class SitioController extends Controller
     {
         try{
             $medidas=Medida::where('sensor_id',$canal)->get();
+            //$hoy=date("d");
+            //$mes=date("m");
+            //$anio=date("y");
+            //$medidas=Sensor::find($canal)->medidas()->whereYear('created_at',$anio)->whereMonth('created_at',$mes)->whereDay('created_at',$hoy);
             return view('PrivateGraf/PagePrivate',['elCanal'=>$canal,'medidas'=>$medidas]);
         }catch(ModelNotFoundException $e)
         {
