@@ -30,9 +30,6 @@ class CreateMedidasTable extends Migration
      */
     public function down()
     {
-        Schema::table('medidas',function (Blueprint $table){
-           $table->dropForeign(['sensor_id']);
-        });
         Schema::dropIfExists('medidas');
     }
 }
