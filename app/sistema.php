@@ -12,7 +12,7 @@ class sistema extends Model
                             'Descripcion'
                         ];
 
-    public function sensores()
+    public function sensors()
         {
             return $this->hasMany('App\sensor');
         }
