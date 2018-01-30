@@ -24,12 +24,11 @@ Route::get('/iot/{sensor}/{medidad}','IotController@escribir');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('isAdmin');
 
-Route::resource('users', 'UserController');
-
-Route::resource('sistemas','SistemaController');
-
-Route::resource('sensors','SensorController');
-
-Route::resource('medidas','MedidaController');
+Route::group(['middleware'=>'isAdmin'],function(){
+    Route::resource('users', 'UserController');
+    Route::resource('sistemas','SistemaController');
+    Route::resource('sensors','SensorController');
+    Route::resource('medidas','MedidaController');
+});
