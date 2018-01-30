@@ -17,6 +17,6 @@ class sensor extends Model
         }
     public function pertenece()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\sistema');
     }
 }

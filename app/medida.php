@@ -14,6 +14,6 @@ class medida extends Model
 
     public function pertenece()
     {
-        return $this->belongsTo('App\sensor');
+        return $this->belongsTo ('App\sensor');
     }
 }
