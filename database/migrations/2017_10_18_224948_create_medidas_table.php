@@ -19,7 +19,7 @@ class CreateMedidasTable extends Migration
             $table->integer('sensor_id')->unsigned()->nullable();
             $table->timestamps();
 
-            $table->foreign('sensor_id')->references('')->on('sensors');
+            $table->foreign('sensor_id')->references('id')->on('sensors');
         });
     }
 
