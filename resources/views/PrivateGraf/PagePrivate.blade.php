@@ -9,7 +9,7 @@
     window.onload = function () {
         var chart = new CanvasJS.Chart("chartContainer", {
             title:{
-                text: "Pagina Privada"
+                text: "Canal"
             },
             data: [
             {
@@ -17,7 +17,7 @@
                 type: "line",
                 dataPoints: [
                     @foreach($medidas as $medida)
-                            { label: "{{$medida->id}}",  y: {{ $medida->valor }}  },
+                            { label: "{{$medida->created_at}}",  y: {{ $medida->valor }}  },
                     @endforeach
                 ]
             }
@@ -49,8 +49,9 @@
 
     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     <p>El canal enviado es: <span style="font-weight: bold; color: red;">
-        El canal es {{$elCanal}}.
+        {{$elCanal->Nombre}}.
         </p>
+    <p>El tipo de canal es: {{$elCanal->Tipo}}</p>
 <div>
     <h1>Los datos son:</h1>
 
