@@ -17,7 +17,6 @@ class CreateSensorsTable extends Migration
             $table->increments('id');
             $table->string('Nombre');
             $table->string('Tipo')->default('Continuo');
-            //$table->geometry('Direccion')->nullable();
             $table->integer('sistema_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('sistema_id')->references('id')->on('sistemas')
