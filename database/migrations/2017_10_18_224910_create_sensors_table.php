@@ -18,9 +18,9 @@ class CreateSensorsTable extends Migration
             $table->string('Nombre');
             $table->string('Tipo')->default('Continuo');
             //$table->geometry('Direccion')->nullable();
-            $table->integer('medida_id')->unsigned()->nullable();
+            $table->integer('sistema_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('medida_id')->references('id')->on('medidas')
+            $table->foreign('sistema_id')->references('id')->on('sistemas')
                 ->OnUpdate('cascade')->OnDelete('cascade');
         });
     }
@@ -32,8 +32,8 @@ class CreateSensorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('sensors', function (Blueprint $table) {
-            $table->dropForeign(['medida_id']);
+        Schema::table('sistemas', function (Blueprint $table) {
+            $table->dropForeign(['sistema_id']);
         });
 
         Schema::dropIfExists('sensors');
