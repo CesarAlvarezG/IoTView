@@ -30,7 +30,7 @@ class CreateSensorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('sistemas', function (Blueprint $table) {
+        Schema::table('sensors', function (Blueprint $table) {
             $table->dropForeign(['sistema_id']);
         });
 
