@@ -19,8 +19,7 @@ class CreateSensorsTable extends Migration
             $table->string('Tipo')->default('Continuo');
             $table->integer('sistema_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('sistema_id')->references('id')->on('sistemas')
-                ->OnUpdate('cascade')->OnDelete('cascade');
+            $table->foreign('sistema_id')->references('id')->on('sistemas');
         });
     }
 
