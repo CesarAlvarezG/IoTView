@@ -4,36 +4,33 @@
 
 @section('headspace')
 
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <meta http-equiv="refresh" content="10">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-    window.onload = function () {
-        var chart = new CanvasJS.Chart("chartContainer", {
-            title:{
-                text: "Canal"
-            },
-            data: [
-            {
-                // Change type to "doughnut", "line", "splineArea", etc.
-                type: "line",
-                dataPoints: [
-                    @foreach($medidas as $medida)
-                            { label: "{{$medida->created_at}}",  y: {{ $medida->valor }}  },
-                    @endforeach
-                ]
-            }
-            ]
-        });
-        chart.render();
-    }
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Fecha', 'Medida'],
+            @foreach($medidas as $medida)
+                ["{{$medida->created_at}}", {{$medida->valor}}],
+            @endforeach
+        ]);
+
+        var options = {
+          title: "{{$sensor->Nombre}}",
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
     </script>
+
 @endsection
-
-
-
-
-
-
-
 
 
 
@@ -45,9 +42,8 @@
 
 @section('content')
 
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
-
-    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     <p>El canal enviado es: <span style="font-weight: bold; color: red;">
         {{$sensor->Nombre}}.
         </p>
