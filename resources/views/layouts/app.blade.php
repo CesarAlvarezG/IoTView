@@ -13,12 +13,15 @@
  <style>
     section{
         float :left;
-        width: 80%;
+        width: 85%;
+
     }
     aside{
         float: left;
-        width: 15%;
-        margin-left: 5%;
+        width: 10%;
+        margin-left: 2%;
+        margin-right: 2%;
+        position: relative;
     }
     </style>
     @yield('headspace')
