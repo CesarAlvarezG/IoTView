@@ -61,8 +61,7 @@ class SitioController extends Controller
             return view('PrivateGraf/PagePrivateSensor',['sensor'=>$sensor,'medidas'=>$medidas]);
         }
         else{
-            Session::flash('flash_message',"No hay medidas en el sensor");
-            return redirect()->back();
+            echo "Sin medidas";
         }
     }
 
