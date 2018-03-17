@@ -15,9 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/view','SitioController@view');
 
-Route::get('/viewprivate/{canal}','SitioController@viewprivate');
+Route::get('/view','SitioController@view');
+Route::get('/viewsistemas','SitioController@viewsistemas');
+Route::get('/viewsistema/{canal}','SitioController@viewsistema');
+Route::get('/viewsistema/sensor/{canal}','SitioController@viewsensor');
 
 Route::get('/iot','IotController@leer');
 Route::get('/iot/{sensor}/{medidad}','IotController@escribir');

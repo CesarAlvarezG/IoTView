@@ -5,32 +5,65 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\medida;
 use App\sensor;
+use App\sistema;
+use Session;
 
 class SitioController extends Controller
 {
-    //
+
     public function view()
     {
-        try{
-            $medida=Medida::orderBy('created_at','desc')->first();
-            return view('PublicGraf/PagePublic',['medida'=>$medida]);
-        }catch(ModelNotFoundException $e)
+        $sistemas=Sistema::All();
+        if($sistemas->count()>0)
         {
-            Session::flash('flash_message',"La pagina publica no puede ser vista");
+            return view('PublicGraf/PagePublic',['sistemas'=>$sistemas]);
+        }else{
+            Session::flash('flash_message',"No hay sistemas creados");
+            return redirect()->back();
+            }
+
+    }
+
+    public function viewsistemas(Request $request)
+    {
+        $sistemas=Sistema::All();
+        if($sistemas->count()>0)
+        {
+            return view('PrivateGraf/PagePrivateSistemas',['sistemas'=>$sistemas]);
+        }
+        else{
+            Session::flash('flash_message',"No hay sistemas creados");
             return redirect()->back();
         }
     }
 
-    public function viewprivate(Request $request, $canal)
+    public function viewsistema(Request $request,$canal)
     {
-        try{
-            $medidas=Sensor::find($canal)->medidas;
-            $elSensor=Sensor::find($canal);
-            return view('PrivateGraf/PagePrivate',['elCanal'=>$elSensor,'medidas'=>$medidas]);
-        }catch(ModelNotFoundException $e)
+        $sistema=Sistema::find($canal);
+        $sensores = Sistema::find($canal)->sensors()->get();
+        if($sensores->count()>0)
         {
-            Session::flash('flash_message',"El canal ($id) no puede ser vista");
+            return view('PrivateGraf/PagePrivateSistema',['sistema'=>$sistema,'sensores'=>$sensores]);
+        }
+        else{
+            Session::flash('flash_message',"No hay sensores en el sistema");
             return redirect()->back();
         }
     }
+
+
+    public function viewsensor(Request $request,$canal)
+    {
+        $sensor=Sensor::find($canal);
+        $medidas=Sensor::find($canal)->medidas()->get();
+        if($medidas->count()>0)
+        {
+            return view('PrivateGraf/PagePrivateSensor',['sensor'=>$sensor,'medidas'=>$medidas]);
+        }
+        else{
+            Session::flash('flash_message',"No hay medidas en el sensor");
+            return redirect()->back();
+        }
+    }
+
 }

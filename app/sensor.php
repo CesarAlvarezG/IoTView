@@ -15,6 +15,7 @@ class sensor extends Model
         {
             return $this->hasMany('App\medida');
         }
+
     public function sistema()
     {
         return $this->belongsTo('App\sistema');

@@ -11,15 +11,17 @@
 @section('sidebar')
 
 
-    <p>Este es el texto de la barra lateral</p>
+     <a href="{{url('/')}}">IotView</a>
 
 @endsection
 
 
 @section('content')
+<p>Los sistemas actuales son:</p>
 
-    <p>La medida mas reciente es:</p>
-
-        <strong> {{$medida->valor}}</strong>
-
+    @foreach($sistemas as $sistema)
+        <h1 align="center">{{$sistema->Nombre}}</h1>
+        <p>{{$sistema->Descripcion}}</p>
+        <p>Codigo: {{$sistema->id}}</p>
+    @endforeach
 @endsection

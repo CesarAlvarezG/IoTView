@@ -83,6 +83,8 @@
                 </div>
 
                 <div class="links">
+                    <a href="{{url('/view')}}">Zona publica</a>
+                    <a href="{{url('/viewsistemas')}}">Zona privada</a>
                     <a href="#">Documentación</a>
                     <a href="https://github.com/CesarAlvarezG/IoTView.git">GitHub</a>
                 </div>
