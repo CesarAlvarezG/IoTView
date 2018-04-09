@@ -82,7 +82,11 @@
     Valor:
     {!! Form::number('valor','0.0',['step'=>"0.01",'required'=>'autofocus']) !!}
     Sensor:
-    {!! Form::number('sensor_id','1') !!}
+    <select name="sensor_id">
+        @foreach($sensores as $sensor)
+                <option value="{{$sensor->id}}">{{ $sensor->Nombre }}</option>
+        @endforeach
+    </select>
 </div>
 {!! Form::submit('Crear una nueva medida', ['class' => 'btn btn-primary']) !!}
 {!! Form::close() !!}

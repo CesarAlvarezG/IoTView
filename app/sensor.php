@@ -8,7 +8,9 @@ class sensor extends Model
 {
     //
     protected $fillable = [
-        'Nombre', 'Tipo'
+        'Nombre',
+        'Tipo',
+        'sistema_id'
     ];
 
     public function medidas()

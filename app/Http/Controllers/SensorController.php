@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\sensor;
+use App\sistema;
 use Session;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -12,13 +13,15 @@ class SensorController extends Controller
     //
     public function create(Request $request)
     {
-        return view('sensor.create');
+        $sistemas=Sistema::all();
+        return view('sensor.create',['sistemas'=>$sistemas]);
     }
   public function store(Request $request)
     {
         $this->validate($request, [
         'Nombre' => 'required | string | max:66',
         'Tipo' =>'required',
+        'sistema_id'=>'required',
         ]);
         $input = $request->all();
         Sensor::create($input);
@@ -60,6 +63,7 @@ class SensorController extends Controller
             $this->validate($request, [
                 'Nombre' => 'required | string | max:66',
                 'Tipo' =>'required',
+                'sensor_id'=>'required',
         ]);
         $input = $request->all();
         $sensor->fill($input)->save();

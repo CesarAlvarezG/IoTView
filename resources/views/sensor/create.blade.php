@@ -20,6 +20,12 @@
     {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}
     {!! Form::label('Nombre', 'Tipo de señal', ['class' => 'control-label']) !!}
     {!! Form::select('Tipo', ['Continuo' => 'Continuo', 'Discreto' => 'Discreto'], 'Continuo'); !!}
+    Sensor:
+    <select name="sistema_id">
+        @foreach($sistemas as $sistema)
+                <option value='{{$sistema->id}}'>{{ $sistema->Nombre }} {{$sistema->id}}</option>
+        @endforeach
+    </select>
 </div>
 {!! Form::submit('Crear un nuevo sensor', ['class' => 'btn btn-primary']) !!}
 {!! Form::close() !!}
