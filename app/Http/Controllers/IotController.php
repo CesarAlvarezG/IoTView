@@ -19,6 +19,7 @@ class IotController extends Controller
         //$elsensor=Sensor::find($sensor);
         //$elsensor::medidas()->create('valor'->$medida);
         Medida::create(array('valor'=>$medida,'sensor_id'=>$sensor));
+        echo 200;
     }
 
 }
