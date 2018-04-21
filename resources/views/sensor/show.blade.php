@@ -13,6 +13,10 @@
     <td>{{ $data->Tipo }}</td>
 </tr>
 <tr>
+    <td style="width: 200px;">Código del sensor</td>
+    <td>{{ $data->id }}</td>
+</tr>
+<tr>
     <td>Created At</td>
     <td>{{ $data->created_at }}</td>
 </tr>
