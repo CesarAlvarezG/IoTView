@@ -37,7 +37,7 @@
     <header align="center">
 
         <h1>
-            <strong>IoTView</strong>
+            <a href="{{url('/') }}"><strong>IoTView</strong></a>
         </h1>
         <h2>
             Aplicación Web para el Internet de las Cosas
