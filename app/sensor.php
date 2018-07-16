@@ -10,6 +10,11 @@ class sensor extends Model
     protected $fillable = [
         'Nombre',
         'Tipo',
+        'Confirmacion',
+        'NVar',
+        'Var',
+        'NMensaje',
+        'Mensaje',
         'sistema_id'
     ];
 

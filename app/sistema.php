@@ -9,8 +9,13 @@ class sistema extends Model
     //
     protected $fillable = [
                             'Nombre',
-                            'Descripcion'
-                        ];
+                            'Descripcion',
+                            'NVar',
+                            'Var',
+                            'NMensaje',
+                            'Mensaje'
+
+    ];
 
     public function sensors()
         {

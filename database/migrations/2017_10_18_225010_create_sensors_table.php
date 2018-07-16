@@ -16,10 +16,17 @@ class CreateSensorsTable extends Migration
         Schema::create('sensors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nombre');
-            $table->string('Tipo')->default('Continuo');
+            $table->string('Tipo')->default('Sensor');
+            $table->string('Confirmacion',12);
+            $table->string('NVar',16)->nullable();
+            $table->float('Var',8,2)->nullable();
+            $table->string('NMensaje',16)->nullable();
+            $table->string('Mensaje',16)->nullable();
+
             $table->integer('sistema_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('sistema_id')->references('id')->on('sistemas');
+
         });
     }
 
