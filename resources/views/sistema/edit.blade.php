@@ -28,6 +28,27 @@
     {!! Form::label('Descripcion', 'Dirección', ['class' => 'control-label']) !!}
     {!! Form::text('Descripcion', null, ['class' => 'form-control']) !!}
 </div>
+<div class="form-group">
+    {!! Form::label('NVar', 'Nombre de la variable', ['class' => 'control-label']) !!}
+    {!! Form::text('NVar', null, ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('Var', 'Valor de la variable', ['class' => 'control-label']) !!}
+    {!! Form::number('Var',null,['step'=>"0.01",'required'=>'autofocus']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('NMensaje', 'Nombre del mensaje', ['class' => 'control-label']) !!}
+    {!! Form::text('NMensaje', null, ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('Mensaje', 'Mensaje', ['class' => 'control-label']) !!}
+    {!! Form::text('Mensaje', null, ['class' => 'form-control']) !!}
+</div>
+
+
+
+
+</div>
     {!! Form::submit('Actualizar sistema', ['class' => 'btn btn-primary']) !!}
     {!! Form::close() !!}
 

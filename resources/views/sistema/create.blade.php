@@ -20,9 +20,24 @@
     {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('Descripcion', 'Descripcion', ['class' => 'control-label']) !!}
+    {!! Form::label('Descripcion', 'Descripción', ['class' => 'control-label']) !!}
     {!! Form::text('Descripcion', null, ['class' => 'form-control']) !!}
 </div>
+<div class="form-group">
+    {!! Form::label('NVar', 'Nombre de variable', ['class' => 'control-label']) !!}
+    {!! Form::text('NVar', null, ['class' => 'form-control']) !!}
+</div>
+Valor variable:
+    {!! Form::number('Var','0.0',['step'=>"0.01",'required'=>'autofocus']) !!}
+<div class="form-group">
+    {!! Form::label('NMensaje', 'Nombre del mensaje', ['class' => 'control-label']) !!}
+    {!! Form::text('NMensaje', null, ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('Mensaje', 'Mensaje del sistema', ['class' => 'control-label']) !!}
+    {!! Form::text('Mensaje', null, ['class' => 'form-control']) !!}
+</div>
+
 {!! Form::submit('Crear un nuevo sistema', ['class' => 'btn btn-primary']) !!}
 {!! Form::close() !!}
 @stop

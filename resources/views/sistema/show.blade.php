@@ -13,6 +13,24 @@
     <td>{{ $data->Descripcion }}</td>
 </tr>
 <tr>
+    <td>Nombre de la Variable</td>
+    <td>{{ $data->NVar }}</td>
+</tr>
+<tr>
+    <td>Valor de la varialble</td>
+    <td>{{ $data->Var }}</td>
+</tr>
+<tr>
+    <td>Nombre del mensaje</td>
+    <td>{{ $data->NMensaje }}</td>
+</tr>
+<tr>
+    <td>Mensaje</td>
+    <td>{{ $data->Mensaje }}</td>
+</tr>
+
+
+<tr>
     <td>Created At</td>
     <td>{{ $data->created_at }}</td>
 </tr>
