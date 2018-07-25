@@ -33,4 +33,5 @@ Route::group(['middleware'=>'isAdmin'],function(){
     Route::resource('sistemas','SistemaController');
     Route::resource('sensors','SensorController');
     Route::resource('medidas','MedidaController');
+    Route::resource('pids', 'PidController');
 });

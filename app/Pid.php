@@ -11,6 +11,8 @@ class Pid extends Model
         'Kp',
         'Ki',
         'kd',
+        'Ts',
+        'SetPoint',
         'sensor_id'
     ];
 

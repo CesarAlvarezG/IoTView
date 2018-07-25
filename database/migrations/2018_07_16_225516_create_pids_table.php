@@ -18,6 +18,8 @@ class CreatePidsTable extends Migration
             $table->float('Kp')->default(1);
             $table->float('Ki')->default(0);
             $table->float('Kd')->default(0);
+            $table->float('Ts')->default(1);
+            $table->float('SetPoint')->default(1);
 
             $table->integer('sensor_id')->unsigned()->nullable();
             $table->timestamps();

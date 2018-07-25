@@ -51,6 +51,7 @@
         <ul><a href="{!! url('sistemas/create') !!}">Nuevo sistema</a></ul>.
         <ul><a href="{!! url('sensors/create') !!}">Nuevo sensor</a></ul>.
         <ul><a href="{!! url('medidas/create') !!}">Nueva medida</a></ul>.
+        <ul><a href="{!! url('pids/create') !!}">Nuevo control PID</a></ul>.
     </ol>
 </div>
 @endsection
@@ -73,6 +74,7 @@
                         <ul><a href="{!! url('sistemas/') !!}">Manejo de sistemas</a></ul>.
                         <ul><a href="{!! url('sensors/') !!}">Manejo de sensores</a></ul>.
                         <ul><a href="{!! url('medidas/') !!}">Manejo de medidas</a></ul>.
+                        <ul><a href="{!! url('pids/') !!}">Manejo de controles PID</a></ul>.
                     </ol>
                 </div>
             </div>
