@@ -17,6 +17,32 @@
     <td>{{ $data->id }}</td>
 </tr>
 <tr>
+    <td>Tipo de señal</td>
+    <td>{{ $data->Tipo }}</td>
+</tr>
+<tr>
+    <td>Token</td>
+    <td>{{ $data->Confirmacion }}</td>
+</tr>
+<tr>
+    <td>Nombre de la variable</td>
+    <td>{{ $data->NVar}}</td>
+</tr>
+<tr>
+    <td>Valor de la variable</td>
+    <td>{{ $data->Var }}</td>
+</tr>
+<tr>
+    <td>Nombre del mensaje</td>
+    <td>{{ $data->NMensaje }}</td>
+</tr>
+<tr>
+    <td>Mensaje</td>
+    <td>{{ $data->Mensaje }}</td>
+</tr>
+
+
+<tr>
     <td>Created At</td>
     <td>{{ $data->created_at }}</td>
 </tr>

@@ -8,13 +8,19 @@ use App\sistema;
 use Session;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
+function generateRandomString($length = 10) {
+    return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+}
+
+
 class SensorController extends Controller
 {
     //
     public function create(Request $request)
     {
         $sistemas=Sistema::all();
-        return view('sensor.create',['sistemas'=>$sistemas]);
+        $token=generateRandomString();
+        return view('sensor.create',['sistemas'=>$sistemas,'token'=>$token]);
     }
   public function store(Request $request)
     {
@@ -49,7 +55,8 @@ class SensorController extends Controller
     {
         try{
             $sensor=Sensor::findOrFail($id);
-            return view('sensor.edit',['data'=>$sensor]);
+            $sistemas=Sistema::all();
+            return view('sensor.edit',['data'=>$sensor,'sistemas'=>$sistemas]);
         }catch(ModelNotFoundException $e)
         {
             Session::flash('flash_message',"El sensor ($id) no pudo ser editado");
@@ -63,7 +70,7 @@ class SensorController extends Controller
             $this->validate($request, [
                 'Nombre' => 'required | string | max:66',
                 'Tipo' =>'required',
-                'sensor_id'=>'required',
+                'sistema_id'=>'required',
         ]);
         $input = $request->all();
         $sensor->fill($input)->save();
