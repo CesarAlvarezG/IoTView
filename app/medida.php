@@ -9,7 +9,8 @@ class medida extends Model
     //
 
     protected $fillable = [
-        'valor','sensor_id'
+            'valor',
+            'sensor_id'
     ];
 
     public function sensor()

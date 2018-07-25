@@ -3,9 +3,9 @@
 @section('content')
 
 
-<h1>{{ $data->valor }}</h1>
-<p class="lead">Valor</p>
 
+<p class="lead">Valor</p>
+<h2>{{ $data->valor }}</h2>
 <table class="table table-striped table-hover">
 
 <tr>
