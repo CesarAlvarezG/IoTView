@@ -1,69 +1,53 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Olvido su Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="{{url('/') }}">IoTView</a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg">Identifiquese para iniciar la sección</p>
+        <form method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
+            <div class="form-group has-feeback">
+                <input id="email" type="email" class="form-control" name="email" value="{{old('email')}}" placeholder="email" required autofocus>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                 @if ($errors->has('email'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
             </div>
-        </div>
+            <div class="form-group has-feedback">
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                @if ($errors->has('password'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
+                        </label>
+                    </div>            
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat"> Login </button>
+                </div>
+                <div class="col-xs-8">
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        Olvido su Password?
+                    </a>
+                </div>
+            </div>    
+        </form>
     </div>
 </div>
+
+
+
 @endsection

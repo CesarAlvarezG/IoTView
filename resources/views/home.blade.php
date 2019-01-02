@@ -2,83 +2,53 @@
 
 
 @section('headerspace')
-<style type="text/css">
-    ul{
-        list-style-type: none;
-        margin: :0;
-        padding: 0;
-        display: flex;
-        flex-direction:row;
-        flex-direction: column;
-    }
-    li{flex-grow: 1;}
-    a{
-        display: block;
-        padding: 1em;
-        background-color: lightcyan;
-        text-align: center;
-        margin-right: 0.2em;
-        margin-bottom: 0.2em;
-        text-decoration: none;
-        color:#000000;
-    }
-    a:hover{background-color: lightgreen;}
-    div#contenedor{
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-    section{
-        float :left;
-        width: 70%;
-    }
-    aside{
-        float: left;
-        width: 25%;
-        margin-left: 5%;
-    }
-</style>
-
 @endsection
 
 @section('sidebar')
 <div class="content" >
-
-<h3>Panel de control</h3>
-    <ol>
-        <ul><a href="{!! url('users/create') !!}">Nuevo usuario</a></ul>.
-        <ul><a href="{!! url('sistemas/create') !!}">Nuevo sistema</a></ul>.
-        <ul><a href="{!! url('sensors/create') !!}">Nuevo sensor</a></ul>.
-        <ul><a href="{!! url('medidas/create') !!}">Nueva medida</a></ul>.
-        <ul><a href="{!! url('pids/create') !!}">Nuevo control PID</a></ul>.
-    </ol>
+<!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"><strong>Panel de control</strong></li>
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="{!! url('users/create') !!}"><i class="fa fa-link"></i> <span>Nuevo usuario</span></a></li>
+        <li><a href="{!! url('sistemas/create') !!}"><i class="fa fa-link"></i> <span>Nuevo sistema</span></a></li>  
+        <li><a href="{!! url('sensors/create') !!}"><i class="fa fa-link"></i> <span>Nuevo sensor</span></a></li>
+        <li><a href="{!! url('medidas/create') !!}"><i class="fa fa-link"></i> <span>Nueva medida</span></a></li>
+        <li><a href="{!! url('pids/create') !!}"><i class="fa fa-link"></i> <span>Nuevo control PID</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
 </div>
 @endsection
 
 @section('content')
-<div class="content">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <ol>
-                        <ul><a href="{!! url('users/') !!}">Manejo de usuarios</a></ul>.
-                        <ul><a href="{!! url('sistemas/') !!}">Manejo de sistemas</a></ul>.
-                        <ul><a href="{!! url('sensors/') !!}">Manejo de sensores</a></ul>.
-                        <ul><a href="{!! url('medidas/') !!}">Manejo de medidas</a></ul>.
-                        <ul><a href="{!! url('pids/') !!}">Manejo de controles PID</a></ul>.
-                    </ol>
-                </div>
-            </div>
-        </div>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Manejo de la base de datos</h3>
+    </div>
+    <div class="box-body">
+        <p>Control de la bases de datos y sus componentes:</p>
+        <a href="{!! url('users/') !!}" class="btn btn-app">
+                <span class="badge bg-purple">{{$users}}</span>
+                <i class="fa fa-users"></i> Usuarios
+              </a>
+        <a href="{!! url('sistemas/') !!}" class="btn btn-app">
+            <span class="badge bg-green">{{$sistemas}}</span>
+            <i class="fa fa-edit"></i> Sistemas
+        </a>
+        <a href="{!! url('sensors/') !!}" class="btn btn-app">
+            <span class="badge bg-green">{{$sensores}}</span>
+            <i class="fa fa-play"></i> Sensores
+        </a>
+        <a href="{!! url('pids/') !!}" class="btn btn-app">
+            <span class="badge bg-green">{{$pids}}</span>
+            <i class="fa fa-repeat"></i> PIDs
+        </a>
+        <a href="{!! url('medidas/') !!}" class="btn btn-app">
+            <span class="badge bg-green">{{$medidas}}</span>
+            <i class="fa fa-barcode"></i> Medidas
+      </a>
     </div>
 </div>
+
 @endsection
