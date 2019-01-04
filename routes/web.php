@@ -17,9 +17,13 @@ Route::get('/', function () {
 
 
 Route::get('/view','SitioController@view');
-Route::get('/viewsistemas','SitioController@viewsistemas');
-Route::get('/viewsistema/{canal}','SitioController@viewsistema');
-Route::get('/viewsistema/sensor/{canal}','SitioController@viewsensor');
+
+Route::group(['middleware'=>'auth'],function (){
+    Route::get('/viewsistema/{canal}','SitioController@viewsistema');
+    Route::get('/viewsistema/sensor/{canal}','SitioController@viewsensor');
+    Route::get('/viewsistemas','SitioController@viewsistemas');
+});
+
 
 Route::get('/iot','IotController@leer');
 Route::get('/iot/{sensor}/{medidad}','IotController@escribir');
