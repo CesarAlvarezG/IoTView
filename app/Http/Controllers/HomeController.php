@@ -7,7 +7,7 @@ use App\User;
 use App\medida;
 use App\sensor;
 use App\sistema;
-use App\pid;
+use App\Pid;
 use Session;
 
 class HomeController extends Controller
