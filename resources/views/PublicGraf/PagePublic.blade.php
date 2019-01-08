@@ -11,17 +11,34 @@
 @section('sidebar')
 
 
-     <a href="{{url('/')}}">IotView</a>
-
 @endsection
 
 
 @section('content')
-<p>Los sistemas actuales son:</p>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="Box">
+            <div class="box-header">
+                <h1 class="box-title">Los sistemas actuales son:</h1>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                         @foreach($sistemas as $sistema)
+                            <tr>
+                                <td>{{$sistema->id}}</td>
+                                <td>{{$sistema->Nombre}}</td>
+                                <td>{{$sistema->Descripcion}}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    @foreach($sistemas as $sistema)
-        <h1 align="center">{{$sistema->Nombre}}</h1>
-        <p>{{$sistema->Descripcion}}</p>
-        <p>Codigo: {{$sistema->id}}</p>
-    @endforeach
 @endsection
