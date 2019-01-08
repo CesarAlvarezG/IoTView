@@ -3,65 +3,50 @@
 @section('title','Pagina Privada')
 
 @section('headspace')
-<style type="text/css">
-    ul{
-        list-style-type: none;
-        margin: :0;
-        padding: 0;
-        display: flex;
-        flex-direction:row;
-        flex-direction: column;
-    }
-    li{flex-grow: 1;}
-    a{
-        display: block;
-        padding: 1em;
-        background-color: lightcyan;
-        text-align: center;
-        margin-right: 0.2em;
-        margin-bottom: 0.2em;
-        text-decoration: none;
-        color:#000000;
-    }
-    a:hover{background-color: lightgreen;}
-    div#contenedor{
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-    section{
-        float :left;
-        width: 70%;
-    }
-    aside{
-        float: left;
-        width: 25%;
-        margin-left: 5%;
-    }
-</style>
-
 @endsection
 
 @section('sidebar')
-    <a href="{{url('/')}}">IotView</a>
-    <ol >
+<div class="content" >
+<!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"><strong>Panel de control</strong></li>
+        <!-- Optionally, you can add icons to the links -->
         @foreach($sistemas as $sistema)
-        <ul><a href=  "{{url('/viewsistema',$sistema->id)}}">{{$sistema->Nombre}}</a></ul>
+            <li><a href="{{url('/viewsistema',$sistema->id)}}"><i class="fa fa-link"></i> <span>{{$sistema->Nombre}}</span></a></li>
         @endforeach
-    </ol>
 
-    @endsection
+      </ul>
+      <!-- /.sidebar-menu -->
+</div>
+
+@endsection
 
 
 @section('content')
-
- @foreach($sistemas as $sistema)
-        <h1 align="center">{{$sistema->Nombre}}</h1>
-        <p>{{$sistema->Descripcion}}</p>
-
-        <p>Codigo: {{$sistema->id}}</p>
-    @endforeach
-
+<div class="row">
+    <div class="col-xs-12">
+        <div class="Box">
+            <div class="box-header">
+                <h1 class="box-title">Los sistemas actuales son:</h1>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                         @foreach($sistemas as $sistema)
+                            <tr>
+                                <td>{{$sistema->id}}</td>
+                                <td>{{$sistema->Nombre}}</td>
+                                <td>{{$sistema->Descripcion}}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
