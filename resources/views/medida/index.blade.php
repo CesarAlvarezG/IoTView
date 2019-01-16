@@ -67,7 +67,7 @@
                                         {{ $medida->sensor_id }}
                                     </td>
                                     <td>
-                                        <a href="{{ route('medidas.show', $medida->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-hand-pointer-o"></i></a>
+                                        <a href="{{ route('medidas.show', $medida->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-eye"></i></a>
                                     </td>
                                     <td>
                                         <a href="{{ route('medidas.edit', $medida->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-pencil"></i></a>

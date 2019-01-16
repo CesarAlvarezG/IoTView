@@ -1,6 +1,27 @@
 @extends('layouts.app')
 
 
+
+@section('headspace')
+
+    <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
+
+    <script src="{{asset('/dist/js/adminlte.min.js')}}"></script>
+    <script src="{{asset('/dist/js/demo.js')}}"></script>
+
+<script>
+  $(function() {
+    $('#tabla1').DataTable()
+
+	})
+</script>
+
+
 @section('sidebar')
 
 
@@ -15,64 +36,83 @@
             <div class="box-header">
                 <h1 class="box-title">Listado de sensores</h1>
                 <p><a href="{!! url('sensors/create') !!}">Agregar un nuevo sensor?</a></p>
-                <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Tipo de señal</th>
-                            <th>Nombre de la variable</th>
-                            <th>Variable</th>
-                            <th>Nombre del Mensaje</th>
-                            <th>Mensaje</th>
-                            <th>Token</th>
-                            <th>Ver</th>
-                            <th>Editar</th>
-                            <th>Borrar</th>
-                        </tr>
-                        @foreach($list as $sensor)
+                <div class="box-body">
+                    <table id="tabla1" class="table table-bordered table-striped">
+                        <thead>
                             <tr>
-                                <td>
-                                    {{ $sensor->id }}
-                                </td>
-                                <td>
-                                    {{ $sensor->Nombre }}
-                                </td>
-                                <td>
-                                    {{ $sensor->Tipo }}
-                                </td>
-                                <td>
-                                    {{ $sensor->NVar }}
-                                </td>
-                                <td>
-                                    {{ $sensor->Var }}
-                                </td>
-                                <td>
-                                    {{ $sensor->NMensaje }}
-                                </td>
-                                <td>
-                                    {{ $sensor->Mensaje }}
-                                </td>
-                                <td>
-                                    {{ $sensor->Confirmacion }}
-                                </td>
-                                <td>
-                                    <a href="{{ route('sensors.show', $sensor->id) }}" class="btn btn-primary">Ver Sensor</a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('sensors.edit', $sensor->id) }}" class="btn btn-primary">Editar Sensor</a>
-                                </td>
-                                <td>
-                                    {!! Form::open([
-                                        'method' => 'DELETE',
-                                        'route' => ['sensors.destroy', $sensor->id]
-                                    ]) !!}
-                                    {!! Form::submit('Borrar este sensor?', ['class' => 'btn btn-danger']) !!}
-                                    {!! Form::close() !!}
-
-                                </td>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Tipo de señal</th>
+                                <th>Nombre de la variable</th>
+                                <th>Variable</th>
+                                <th>Nombre del Mensaje</th>
+                                <th>Mensaje</th>
+                                <th>Token</th>
+                                <th>Ver</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        @foreach($list as $sensor)
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{ $sensor->id }}
+                                    </td>
+                                    <td>
+                                        {{ $sensor->Nombre }}
+                                    </td>
+                                    <td>
+                                        {{ $sensor->Tipo }}
+                                    </td>
+                                    <td>
+                                        {{ $sensor->NVar }}
+                                    </td>
+                                    <td>
+                                        {{ $sensor->Var }}
+                                    </td>
+                                    <td>
+                                        {{ $sensor->NMensaje }}
+                                    </td>
+                                    <td>
+                                        {{ $sensor->Mensaje }}
+                                    </td>
+                                    <td>
+                                        {{ $sensor->Confirmacion }}
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('sensors.show', $sensor->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-eye"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('sensors.edit', $sensor->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-pencil"></i></a>
+                                    </td>
+                                    <td>
+                                        {!! Form::open([
+                                            'method' => 'DELETE',
+                                            'route' => ['sensors.destroy', $sensor->id]
+                                        ]) !!}
+                                        {!! Form::submit('X', ['class' => 'btn btn-danger']) !!}
+                                        {!! Form::close() !!}
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Tipo de señal</th>
+                                <th>Nombre de la variable</th>
+                                <th>Variable</th>
+                                <th>Nombre del Mensaje</th>
+                                <th>Mensaje</th>
+                                <th>Token</th>
+                                <th>Ver</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -85,13 +125,3 @@
 
 
 
-@section('footerspace')
-
-        <!-- jQuery 3 -->
-    <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
-
-@endsection
