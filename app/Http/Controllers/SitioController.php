@@ -55,14 +55,14 @@ class SitioController extends Controller
     public function viewsensor(Request $request,$canal)
     {
         $sensor=Sensor::find($canal);
-        $medidas=Sensor::find($canal)->medidas()->get();
+        $medidas=Sensor::find($canal)->medidas()->latest()->first();
         if($medidas->count()>0)
         {
-            return view('PrivateGraf/PagePrivateSensor',['sensor'=>$sensor,'medidas'=>$medidas]);
+            return $medidas;
+            //return view('PrivateGraf/PagePrivateSensor',['sensor'=>$sensor,'medidas'=>$medidas]);
         }
         else{
             echo "Sin medidas";
         }
     }
-
 }

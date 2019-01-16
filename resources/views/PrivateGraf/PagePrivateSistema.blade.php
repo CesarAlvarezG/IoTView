@@ -1,69 +1,72 @@
 @extends('layouts.app')
 
-@section('title','Pagina Privada de sistema')
+@section('title','Pagina Privada')
 
 @section('headspace')
 
-    <style>
+    <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
+    <script src="{{asset('/dist/js/adminlte.min.js')}}"></script>
+    <script src="{{asset('/dist/js/demo.js')}}"></script>
 
-#marco {
-    background-color: white;
-    padding: 10px;
-    margin: 10px;
-    border: 3px solid black;
-}
+    <script  src="{{asset('bower_components/Flot/jquery.js')}}"></script>
+    <script  src="{{asset('bower_components/Flot/jquery.flot.js')}}"></script>
 
-#contenedor {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    <script>
+  $(function() {
 
-    -webkit-flex-wrap: wrap;
-    flex-wrap:wrap;
-}
+     @foreach($sensores as $sensor)
+          @include('PrivateGraf/PagePrivateSensorHead')
+      @endforeach
+	});
+</script>
 
-.vertical {
-  padding:3px;
-  border:1px solid black;
-  background-color:white;
-  width:300px;
-  height:400px;
-}
 
-.horizontal {
-  border:1px solid white;
-  background-color:white;
-  width:90%;
-  height:550px;
-}
-
-</style>
 
 @endsection
 
-
-
 @section('sidebar')
-    <a href="{{url('/')}}">IotView</a>
-    <ol >
-        @foreach($sensores as $sensor)
-        <ul><a href=  " {{url('/viewsistema/sensor',$sensor->id)}}">{{$sensor->Nombre}}</a></ul>
-        @endforeach
-    </ol>
+<div class="content" >
+<!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"><strong><a href="{{url('home')}}">Panel de control</a></strong></li>
+        <!-- Optionally, you can add icons to the links -->
 
+      </ul>
+      <!-- /.sidebar-menu -->
+</div>
 
 @endsection
 
 
 @section('content')
-<div align="center">
-    <h1>El sistema: <strong>{{$sistema->Nombre}}</strong>, posee los siguientes sensores:</h1>
-</div>
-    @foreach($sensores as $sensor)
-    <div id="contenedor">
-        <object class="horizontal" data ="{{url('/viewsistema/sensor',$sensor->id)}}" type="text/html"></object>
-    </div>
-@endforeach
+    <section class="content-header">
+        <h1>
+            {{$sistema->Nombre}}
+            <small>Sensores activos</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-dashboard"></i>{{$sistema->Nombre}}
+
+            </li>
+            @foreach($sensores as $sensor)
+                <li><a href="{{url('/viewsistema/sensor',$sensor->id)}}">{{$sensor->Nombre}}</a></li>
+            @endforeach
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            @foreach($sensores as $sensor)
+                @include('PrivateGraf/PagePrivateSensor')
+            @endforeach
+        </div>
+    </section>
+@endsection
+
+
+@section('footerspace')
+
 
 @endsection
+
