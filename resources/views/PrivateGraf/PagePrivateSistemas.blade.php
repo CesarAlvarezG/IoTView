@@ -9,14 +9,10 @@
 <div class="content" >
 <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"><strong>Panel de control</strong></li>
-        <!-- Optionally, you can add icons to the links -->
         @foreach($sistemas as $sistema)
             <li><a href="{{url('/viewsistema',$sistema->id)}}"><i class="fa fa-link"></i> <span>{{$sistema->Nombre}}</span></a></li>
         @endforeach
-
       </ul>
-      <!-- /.sidebar-menu -->
 </div>
 
 @endsection

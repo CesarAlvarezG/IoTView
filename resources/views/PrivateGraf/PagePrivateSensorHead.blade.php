@@ -1,5 +1,5 @@
 
-var data{{$sensor->id}} = [], totalPoints{{$sensor->id}} = 300;
+var data{{$sensor->id}} = [], totalPoints{{$sensor->id}} = 1000;
 
 var sensorData{{$sensor->id}}=0;
 

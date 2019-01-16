@@ -27,15 +27,6 @@
 @endsection
 
 @section('sidebar')
-<div class="content" >
-<!-- Sidebar Menu -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"><strong><a href="{{url('home')}}">Panel de control</a></strong></li>
-        <!-- Optionally, you can add icons to the links -->
-
-      </ul>
-      <!-- /.sidebar-menu -->
-</div>
 
 @endsection
 
