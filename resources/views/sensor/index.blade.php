@@ -53,8 +53,8 @@
                                 <th>Borrar</th>
                             </tr>
                         </thead>
-                        @foreach($list as $sensor)
-                            <tbody>
+                        <tbody>
+                            @foreach($list as $sensor)
                                 <tr>
                                     <td>
                                         {{ $sensor->id }}
