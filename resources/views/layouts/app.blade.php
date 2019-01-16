@@ -75,6 +75,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ url('/home') }}" class="dropdown-toggle">
+                                <i class="fa fa-gears"></i>
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="hidden-xs">Logout</span>
                             </a>
@@ -82,11 +87,7 @@
                                         {{ csrf_field() }}
                             </form>
                         </li>    
-                        <li>
-                            <a href="{{ url('/home') }}" class="dropdown-toggle">
-                                <i class="fa fa-gears"></i>
-                            </a>
-                        </li>
+
                     @endguest
                 </ul>    
            @yield('navibar')
@@ -113,13 +114,8 @@
         @endif
         <section>
             <div class="content-wrapper">
-            <!-- Main content -->
-            <section class="content container-fluid">
-                @yield('content')   
-            </section>
-            <!-- /.content -->
+                @yield('content')
             </div>
-            <!-- /.content-wrapper -->
         </section>
     </div>
     <footer  class="main-footer">
