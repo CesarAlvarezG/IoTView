@@ -34,9 +34,10 @@
                 {!! Form::label('Direccion', 'Dirección', ['class' => 'control-label']) !!}
                 {!! Form::text('Direccion', null, ['class' => 'form-control']) !!}
             </div>
-
-            {!! Form::submit('Crear un nuevo usuario', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}
+            <div class="box-footer">
+                {!! Form::submit('Crear un nuevo usuario', ['class' => 'btn btn-primary']) !!}
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
 </section>
