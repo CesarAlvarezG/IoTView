@@ -67,17 +67,17 @@
                                         {{ $medida->sensor_id }}
                                     </td>
                                     <td>
-                                        <a href="{{ route('medidas.show', $medida->id) }}" class="btn btn-primary">Ver Medida</a>
+                                        <a href="{{ route('medidas.show', $medida->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-hand-pointer-o"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('medidas.edit', $medida->id) }}" class="btn btn-primary">Editar Medida</a>
+                                        <a href="{{ route('medidas.edit', $medida->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-pencil"></i></a>
                                     </td>
                                     <td>
                                         {!! Form::open([
                                             'method' => 'DELETE',
                                             'route' => ['medidas.destroy', $medida->id]
                                         ]) !!}
-                                        {!! Form::submit('Borrar esta medida?', ['class' => 'btn btn-danger']) !!}
+                                        {!! Form::submit('X', ['class' => 'btn btn-danger']) !!}
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
