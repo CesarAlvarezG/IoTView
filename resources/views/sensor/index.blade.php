@@ -3,11 +3,7 @@
 
 @section('sidebar')
 
-<div class="content" >
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"><strong><a href="{{url('home')}}">Panel de control</a></strong></li>
-      </ul>
-</div>
+
 
 @endsection
 

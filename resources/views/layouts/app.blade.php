@@ -94,7 +94,14 @@
     </nav>
     <aside class="main-sidebar">
         <section class="sidebar">
+            <div class="content" >
+                  <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header"><strong><a href="{{url('home')}}">Panel de control</a></strong></li>
+                    <li class="header"><strong><a href="{{url('view')}}">Zona publica</a></strong></li>
+                    <li class="header"><strong><a href="{{url('viewsistemas')}}">Zona privada</a></strong></li>
+                  </ul>
             @yield('sidebar')
+            </div>
         </section>
     </aside>
     <div class="container">

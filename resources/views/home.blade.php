@@ -5,19 +5,13 @@
 @endsection
 
 @section('sidebar')
-<div class="content" >
-<!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"><strong>Panel de control</strong></li>
-        <!-- Optionally, you can add icons to the links -->
         <li><a href="{!! url('users/create') !!}"><i class="fa fa-link"></i> <span>Nuevo usuario</span></a></li>
         <li><a href="{!! url('sistemas/create') !!}"><i class="fa fa-link"></i> <span>Nuevo sistema</span></a></li>  
         <li><a href="{!! url('sensors/create') !!}"><i class="fa fa-link"></i> <span>Nuevo sensor</span></a></li>
         <li><a href="{!! url('medidas/create') !!}"><i class="fa fa-link"></i> <span>Nueva medida</span></a></li>
         <li><a href="{!! url('pids/create') !!}"><i class="fa fa-link"></i> <span>Nuevo control PID</span></a></li>
       </ul>
-      <!-- /.sidebar-menu -->
-</div>
 @endsection
 
 @section('content')
