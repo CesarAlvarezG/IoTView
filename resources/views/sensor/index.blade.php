@@ -21,6 +21,10 @@
 	})
 </script>
 
+@endsection
+
+
+
 
 @section('sidebar')
 
@@ -122,6 +126,4 @@
 
 
 @stop
-
-
 
