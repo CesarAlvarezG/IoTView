@@ -24,7 +24,7 @@
                 {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('Descripcion', 'Dirección', ['class' => 'control-label']) !!}
+                {!! Form::label('Descripcion', 'Descripción', ['class' => 'control-label']) !!}
                 {!! Form::text('Descripcion', null, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">

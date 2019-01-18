@@ -20,8 +20,8 @@ class CreateSistemasTable extends Migration
             //Variables internas
             $table->string('NVar',16)->nullable();
             $table->float('Var',8,2)->nullable();
-            $table->string('NMensaje',16)->nullable();
-            $table->string('Mensaje',16)->nullable();
+            $table->string('NMensaje',66)->nullable();
+            $table->string('Mensaje',66)->nullable();
             $table->timestamps();
         });
     }
