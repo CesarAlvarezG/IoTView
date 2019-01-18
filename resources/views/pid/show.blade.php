@@ -68,19 +68,19 @@
             <div class="box-footer">
                 <table>
                     <tr>
-                        <a href="{{ route('Pids.edit', $data->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-pencil"></i></a>
+                        <a href="{{ route('pids.edit', $data->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-pencil"></i></a>
                     </tr>
                     <tr>
                         {!! Form::open([
                             'method' => 'DELETE',
-                            'route' => ['Pids.destroy', $data->id]
+                            'route' => ['pids.destroy', $data->id]
                         ]) !!}
 
                         {!! Form::submit('X', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </tr>
                     <tr>
-                        <a href="{{ route('Pids.index') }}" class="btn btn-info"><i class="fa fa-fw fa-undo"></i></a>
+                        <a href="{{ route('pids.index') }}" class="btn btn-info"><i class="fa fa-fw fa-undo"></i></a>
                     </tr>
                 </table>
             </div>
