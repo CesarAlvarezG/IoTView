@@ -56,7 +56,7 @@
             </select>
         </div>
         <div class="box-footer">
-            {!! Form::submit('Crear una nueva medida', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('Crear un nuevo control PID', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
 
