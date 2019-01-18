@@ -22,19 +22,19 @@
             <div class="row">
                 <div class="col-md-4 border-rigth">
                     <div class="description-box">
-                        <h5 class="description-header">Tipo</h5>
+                        <h5 class="description-header"><b>TIPO:</b></h5>
                             <span class="description-text">{{$sensor->Tipo}}</span>
                     </div>
                 </div>
                 <div class="col-md-4 border-rigth">
                     <div class="description-box">
-                        <h5 class="description-header">{{$sensor->NVar}}</h5>
+                        <h5 class="description-header"><b>{{$sensor->NVar}}:</b></h5>
                         <span class="description-text" id="Display{{$sensor->id}}">{{$sensor->Var}}</span>
                     </div>
                 </div>
                 <div class="col-md-4 border-rigth">
                     <div class="description-box">
-                        <h5 class="info-box-text">{{$sensor->NMensaje}}</h5>
+                        <h5 class="info-box-text"><b> {{$sensor->NMensaje}}:</b> </h5>
                         <span class="description-text">{{$sensor->Mensaje}}</span>
                     </div>
                 </div>
