@@ -16,8 +16,9 @@ class IotController extends Controller
     }
     public function escribir(Request $request,$sensor,$medida)
     {
-        //$elsensor=Sensor::find($sensor);
-        //$elsensor::medidas()->create('valor'->$medida);
+        $elsensor=Sensor::find($sensor);
+        $elsensor->Var=$medida;
+        $elsensor->save();
         Medida::create(array('valor'=>$medida,'sensor_id'=>$sensor));
         echo 200;
     }

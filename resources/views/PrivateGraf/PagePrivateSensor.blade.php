@@ -29,7 +29,7 @@
                 <div class="col-md-4 border-rigth">
                     <div class="description-box">
                         <h5 class="description-header">{{$sensor->NVar}}</h5>
-                        <span class="description-text">{{$sensor->Var}}</span>
+                        <span class="description-text" id="Display{{$sensor->id}}">{{$sensor->Var}}</span>
                     </div>
                 </div>
                 <div class="col-md-4 border-rigth">
