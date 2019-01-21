@@ -27,6 +27,7 @@ Route::group(['middleware'=>'auth'],function (){
 
 Route::get('/iot','IotController@leer');
 Route::get('/iot/{sensor}/{medidad}','IotController@escribir');
+Route::get('iotsistema/{idSistema}','IotController@leerSistema');
 
 Auth::routes();
 
