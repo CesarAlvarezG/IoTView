@@ -18,6 +18,9 @@ class sensor extends Model
         'sistema_id'
     ];
 
+    protected $hidden = ['Confirmacion','created_at','updated_at','sistema_id'];
+
+
     public function medidas()
         {
             return $this->hasMany('App\medida');

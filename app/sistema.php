@@ -16,7 +16,7 @@ class sistema extends Model
                             'Mensaje'
 
     ];
-
+     protected $hidden = ['created_at','updated_at'];
     public function sensors()
         {
             return $this->hasMany('App\sensor');
