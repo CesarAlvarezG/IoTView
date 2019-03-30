@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::resource('sistemas', 'ApiSistemaController')->middleware('auth.basic.once');
+//Route::resource('sistemas', 'ApiSistemaController')->middleware('auth.basic.once');
+Route::resource('sistemas', 'ApiSistemaController');
