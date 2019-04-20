@@ -13,8 +13,8 @@ function loadData{{$sensor->id}}()
                 {
                     var x=this.responseText;
                     var y=JSON.parse(x);
-                    sensorData{{$sensor->id}}=y.valor;
-                    document.getElementById("Display{{$sensor->id}}").innerHTML=y.valor;
+                    sensorData{{$sensor->id}}=y;
+                    document.getElementById("Display{{$sensor->id}}").innerHTML=y;
                 }
         };
         xhttp{{$sensor->id}}.open("GET","{{url('viewsistema/sensor',$sensor->id)}}",true);
