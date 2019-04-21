@@ -82,7 +82,20 @@ class ApiSistemaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $variable =$request->input('otro');
+        $ojo =json_decode($variable);
+        $sist=Sistema::find($id);
+        $sist->Var=$ojo->Var;
+        $sist->Mensaje=$ojo->Mensaje;
+        $sist->save();
+        foreach($ojo->sensors as $sen)
+        {
+            $senso=Sensor::find($sen->id);
+            $senso->Var=$sen->Var;
+            $senso->Mensaje=$sen->Mensaje;
+            $senso->save();
+        }
+        return $variable;
     }
 
     /**
