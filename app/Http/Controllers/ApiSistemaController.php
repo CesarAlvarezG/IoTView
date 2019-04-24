@@ -82,20 +82,31 @@ class ApiSistemaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $variable =$request->input('otro');
-        $ojo =json_decode($variable);
-        $sist=Sistema::find($id);
-        $sist->Var=$ojo->Var;
-        $sist->Mensaje=$ojo->Mensaje;
-        $sist->save();
-        foreach($ojo->sensors as $sen)
-        {
-            $senso=Sensor::find($sen->id);
-            $senso->Var=$sen->Var;
-            $senso->Mensaje=$sen->Mensaje;
-            $senso->save();
-        }
+        try{
+            $variable =$request->input('otro');
+            $ojo =json_decode($variable);
+            $sist=Sistema::findOrFail($id);
+            $sist->Var=$ojo->Var;
+            $sist->Mensaje=$ojo->Mensaje;
+            $sist->save();
+            foreach($ojo->sensors as $sen)
+            {
+                try{
+                    $senso=Sensor::findOrFail($sen->id);
+                    $senso->Var=$sen->Var;
+                    $senso->Mensaje=$sen->Mensaje;
+                    $senso->save();
+                }catch(ModelNotFoundException $e)
+                {
+                    return response()->json(['error'=>true, 'msg'=>'Sensor no encontrado' ], 404);
+                }
+            }
         return $variable;
+        }catch(ModelNotFoundException $e)
+        {
+            return response()->json(['error'=>true, 'msg'=>'Sistema no encontrado' ], 404);
+        }
+
     }
 
     /**
