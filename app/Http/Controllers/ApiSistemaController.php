@@ -85,7 +85,7 @@ class ApiSistemaController extends Controller
         try{
             $variable =$request->input('otro');
             $ojo =json_decode($variable);
-            $sist=Sistema::findOrFail($id);
+            $sist=Sistema::findOrFail($ojo->id);
             $sist->Var=$ojo->Var;
             $sist->Mensaje=$ojo->Mensaje;
             $sist->save();
