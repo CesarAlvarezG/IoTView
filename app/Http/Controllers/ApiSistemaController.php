@@ -83,8 +83,7 @@ class ApiSistemaController extends Controller
     public function update(Request $request, $id)
     {
         try{
-            $variable =$request->input('otro');
-            $ojo =json_decode($variable);
+            $ojo =json_decode($id);
             $sist=Sistema::findOrFail($ojo->id);
             $sist->Var=$ojo->Var;
             $sist->Mensaje=$ojo->Mensaje;
@@ -101,7 +100,7 @@ class ApiSistemaController extends Controller
                     return response()->json(['error'=>true, 'msg'=>'Sensor no encontrado' ], 404);
                 }
             }
-        return $variable;
+        return $id;
         }catch(ModelNotFoundException $e)
         {
             return response()->json(['error'=>true, 'msg'=>'Sistema no encontrado' ], 404);
