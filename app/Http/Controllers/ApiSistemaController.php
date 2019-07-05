@@ -84,6 +84,12 @@ class ApiSistemaController extends Controller
     {
         try{
             $ojo =json_decode($id);
+        }
+        catch(ModelNotFoundException $e){
+            return response()->json(['error'=>true, 'msg'=>'Json no decodificado' ], 404);
+        }
+        try{
+
             $sist=Sistema::findOrFail($ojo->id);
             $sist->Var=$ojo->Var;
             $sist->Mensaje=$ojo->Mensaje;
