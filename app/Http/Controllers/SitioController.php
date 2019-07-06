@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pid;
 use App\medida;
 use App\sensor;
 use App\sistema;
+use App\User;
+
 use Session;
 
 class SitioController extends Controller
@@ -14,9 +17,17 @@ class SitioController extends Controller
     public function view()
     {
         $sistemas=Sistema::All();
+        $nSist=$sistemas->count();
+        $usuarios=User::All();
+        $nUsua=$usuarios->count();
+        $sensores=Sensor::All();
+        $nSen=$sensores->count();
+        $pids=Pid::All();
+        $nPid=$pids->count();
+
         if($sistemas->count()>0)
         {
-            return view('PublicGraf/PagePublic',['sistemas'=>$sistemas]);
+            return view('PublicGraf/PagePublic',['sistemas'=>$sistemas,'nSist'=>$nSist,'nUsua'=>$nUsua,'nSen'=>$nSen,'nPid'=>$nPid]);
         }else{
             Session::flash('flash_message',"No hay sistemas creados");
             return redirect()->back();
