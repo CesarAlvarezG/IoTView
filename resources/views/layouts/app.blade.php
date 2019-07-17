@@ -108,8 +108,8 @@
     <div class="container">
         <!-- Espacio para los mensajes flash enviados entre solicitudes -->
         @if(Session::has('flash_message'))
-            <article class="alert alert-success">
-                {{ Session::get('flash_message') }}
+            <article class="alert alert-info">
+                <p align="center"> <strong>{{ Session::get('flash_message') }}</strong> </p>
             </article>
         @endif
         <section>

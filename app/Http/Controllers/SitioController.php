@@ -38,9 +38,18 @@ class SitioController extends Controller
     public function viewsistemas(Request $request)
     {
         $sistemas=Sistema::All();
+        $sistemas=Sistema::All();
+        $nSist=$sistemas->count();
+        $usuarios=User::All();
+        $nUsua=$usuarios->count();
+        $sensores=Sensor::All();
+        $nSen=$sensores->count();
+        $pids=Pid::All();
+        $nPid=$pids->count();
+
         if($sistemas->count()>0)
         {
-            return view('PrivateGraf/PagePrivateSistemas',['sistemas'=>$sistemas]);
+            return view('PrivateGraf/PagePrivateSistemas',['sistemas'=>$sistemas,'nSist'=>$nSist,'nUsua'=>$nUsua,'nSen'=>$nSen,'nPid'=>$nPid]);
         }
         else{
             Session::flash('flash_message',"No hay sistemas creados");
