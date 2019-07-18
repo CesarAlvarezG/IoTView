@@ -51,7 +51,6 @@
                                 <th>Variable</th>
                                 <th>Nombre del Mensaje</th>
                                 <th>Mensaje</th>
-                                <th>Token</th>
                                 <th>Ver</th>
                                 <th>Editar</th>
                                 <th>Borrar</th>
@@ -82,9 +81,6 @@
                                         {{ $sensor->Mensaje }}
                                     </td>
                                     <td>
-                                        {{ $sensor->Confirmacion }}
-                                    </td>
-                                    <td>
                                         <a href="{{ route('sensors.show', $sensor->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-eye"></i></a>
                                     </td>
                                     <td>
@@ -111,7 +107,6 @@
                                 <th>Variable</th>
                                 <th>Nombre del Mensaje</th>
                                 <th>Mensaje</th>
-                                <th>Token</th>
                                 <th>Ver</th>
                                 <th>Editar</th>
                                 <th>Borrar</th>

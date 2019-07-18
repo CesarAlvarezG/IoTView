@@ -8,9 +8,6 @@ use App\sistema;
 use Session;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-function generateRandomString($length = 10) {
-    return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
-}
 
 
 class SensorController extends Controller
@@ -19,8 +16,8 @@ class SensorController extends Controller
     public function create(Request $request)
     {
         $sistemas=Sistema::all();
-        $token=generateRandomString();
-        return view('sensor.create',['sistemas'=>$sistemas,'token'=>$token]);
+
+        return view('sensor.create',['sistemas'=>$sistemas]);
     }
   public function store(Request $request)
     {

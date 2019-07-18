@@ -43,10 +43,6 @@
                 {!! Form::label('Mensaje', 'Mensaje', ['class' => 'control-label']) !!}
                 {!! Form::text('Mensaje', null, ['class' => 'form-control']) !!}
             </div>
-            <div class="form-group">
-                {!! Form::label('Confirmacion','Token' , ['class' => 'control-label']) !!}
-                {!! Form::text('Confirmacion',null, ['class' => 'control-label']) !!}
-            </div>
 
 
             <div class="form-group">

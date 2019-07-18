@@ -17,6 +17,7 @@ class CreateSistemasTable extends Migration
             $table->increments('id');
             $table->string('Nombre',66);
             $table->string('Descripcion',66);
+            $table->string('Confirmacion',12)->nullable();
             //Variables internas
             $table->string('NVar',16)->nullable();
             $table->float('Var',8,2)->nullable();

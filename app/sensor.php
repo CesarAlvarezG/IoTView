@@ -10,7 +10,6 @@ class Sensor extends Model
     protected $fillable = [
         'Nombre',
         'Tipo',
-        'Confirmacion',
         'NVar',
         'Var',
         'NMensaje',
@@ -18,7 +17,7 @@ class Sensor extends Model
         'sistema_id'
     ];
 
-    protected $hidden = ['Confirmacion','created_at','updated_at','sistema_id'];
+    protected $hidden = ['created_at','updated_at','sistema_id'];
 
 
     public function medidas()

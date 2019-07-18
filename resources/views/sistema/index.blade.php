@@ -43,6 +43,7 @@
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Descripción</th>
+                                <th>Token</th>
                                 <th>Nombre de la variable</th>
                                 <th>Variable</th>
                                 <th>Nombre del Mensaje</th>
@@ -63,6 +64,9 @@
                                     </td>
                                     <td>
                                         {{ $sistema->Descripcion }}
+                                    </td>
+                                    <td>
+                                        {{ $sistema->Confirmacion }}
                                     </td>
                                     <td>
                                         {{ $sistema->NVar }}
@@ -99,6 +103,7 @@
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Descripción</th>
+                                <th>Token</th>
                                 <th>Nombre de la variable</th>
                                 <th>Variable</th>
                                 <th>Nombre del Mensaje</th>

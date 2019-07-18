@@ -34,6 +34,10 @@
                         <td>{{ $data->Descripcion }}</td>
                     </tr>
                     <tr>
+                        <td>Token</td>
+                        <td>{{ $data->Confirmacion }}</td>
+                    </tr>
+                    <tr>
                         <td>Nombre de la Variable</td>
                         <td>{{ $data->NVar }}</td>
                     </tr>

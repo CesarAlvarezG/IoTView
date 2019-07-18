@@ -7,12 +7,18 @@ use App\sistema;
 use Session;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
+function generateRandomString($length = 10) {
+    return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+}
+
+
 class SistemaController extends Controller
 {
     //
     public function create(Request $request)
     {
-        return view('sistema.create');
+        $token=generateRandomString();
+        return view('sistema.create',['token'=>$token]);
     }
     public function store(Request $request)
     {

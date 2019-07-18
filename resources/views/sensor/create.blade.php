@@ -48,10 +48,6 @@
             {!! Form::text('Mensaje', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('Confirmacion','Token' , ['class' => 'control-label']) !!}
-            {!! Form::text('Confirmacion', $token, ['class' => 'control-label']) !!}
-        </div>
-        <div class="form-group">
             {!! Form::label('sistema_id','Sistema' , ['class' => 'control-label']) !!}
             <select name="sistema_id">
                 @foreach($sistemas as $sistema)

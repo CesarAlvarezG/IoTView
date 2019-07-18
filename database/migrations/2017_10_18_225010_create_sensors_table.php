@@ -17,7 +17,7 @@ class CreateSensorsTable extends Migration
             $table->increments('id');
             $table->string('Nombre');
             $table->string('Tipo')->default('Sensor');
-            $table->string('Confirmacion',12)->nullable();
+            //$table->string('Confirmacion',12)->nullable();
             $table->string('NVar',16)->nullable();
             $table->float('Var',8,2)->nullable();
             $table->string('NMensaje',16)->nullable();

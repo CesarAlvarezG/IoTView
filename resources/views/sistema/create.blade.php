@@ -28,6 +28,10 @@
             {!! Form::text('Descripcion', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
+            {!! Form::label('Confirmacion','Token' , ['class' => 'control-label']) !!}
+            {!! Form::text('Confirmacion', $token, ['class' => 'control-label']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('NVar', 'Nombre de variable', ['class' => 'control-label']) !!}
             {!! Form::text('NVar', null, ['class' => 'form-control']) !!}
         </div>

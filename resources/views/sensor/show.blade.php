@@ -41,10 +41,6 @@
                         <td>{{ $data->Tipo }}</td>
                     </tr>
                     <tr>
-                        <td>Token</td>
-                        <td>{{ $data->Confirmacion }}</td>
-                    </tr>
-                    <tr>
                         <td>Nombre de la variable</td>
                         <td>{{ $data->NVar}}</td>
                     </tr>
