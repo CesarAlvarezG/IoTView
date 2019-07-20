@@ -91,7 +91,7 @@
                 </div>
                 <div class="text">
                     <p>
-                        Plataforma de Internet de las Cosas (IoT) para realizar control automático en sistemas dinámicos, redes de sensores, SmartMetering y SmartGrid. Esta plataforma se ha desarrollado como resultado de la tesis de Maestría en Ingeniería de César Augusto Álvarez Gaspar, en la universidad Autónoma de Manizales. Los desarrollos originales son para los System on Chip (SoC) ESP32 y ESP8266. En próximas entregas se espera ampliarla para otros dispositivos del IoT. Esta aplicación web esta creada para un solo proyecto compuesto por múltiplex sistemas, cada uno representado por un solo SoC. La gestión de la plataforma recae en el administrador quien crea, actualiza, destruye los sistemas y sensores asociados al proyecto.</p>
+                        Plataforma de Internet de las Cosas (IoT) para realizar control automático en sistemas dinámicos, redes de sensores, SmartMetering y SmartGrid. Esta plataforma se ha desarrollado como resultado de la tesis de Maestría en Ingeniería de César Augusto Álvarez Gaspar, en la universidad Autónoma de Manizales. Los desarrollos originales son para los System on Chip (SoC) ESP32 y ESP8266. En próximas entregas se espera ampliarla para otros dispositivos del IoT. Esta aplicación web esta creada para un solo proyecto compuesto por múltiples sistemas, cada uno representado por un solo SoC. La gestión de la plataforma recae en el administrador quien crea, actualiza, destruye los sistemas y sensores asociados al proyecto.</p>
                 </div>
                 <div class="links">
                     <a href="{{url('/view')}}">Zona publica</a>
