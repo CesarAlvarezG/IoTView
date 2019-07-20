@@ -7,7 +7,8 @@
     <div class="box box-primary">
         <div class="box-header with-border">
              <h1 class="box-title">Agregar un nuevo sistema</h1>
-            <p>Inserte la información del nuevo sistema.</p>
+            <p></p>
+            <p>Inserte la información del nuevo sistema. Recuerde que un sistema equivale a un Objeto de Internet implementado por medio de un sistema embebido, actualmente ESP32 o ESP8266.</p>
         </div>
         @if($errors->any())
             <div class="alert alert-danger">

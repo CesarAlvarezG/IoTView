@@ -22,7 +22,8 @@
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">{{ $data->Nombre }}</h1>
-            <p>Datos del sistema</p>
+            <p></p>
+            <p>Datos del sistema, equivalente a un Objeto de Internet implementado por medio de un sistema embebido, actualmente ESP32 o ESP8266.</p>
             <table id="tabla1" class="table table-bordered table-striped">
                 <tbody>
                     <tr>

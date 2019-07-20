@@ -36,6 +36,7 @@
             <div class="box-header">
                 <h1 class="box-title">Listado de sistemas</h1>
                 <p><a href="{!! url('sistemas/create') !!}">Agregar un nuevo sistema?</a></p>
+                <p>Cada sistema equivale a un Objeto de Internet implementado por medio de un sistema embebido, actualmente ESP32 o ESP8266.</p>
                 <div class="box-body">
                     <table id="tabla1" class="table table-bordered table-striped">
                         <thead>
