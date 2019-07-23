@@ -64,32 +64,32 @@
             </div>
         </div>
     </div>
-
-    <div class="col-xs-12">
-        <div class="Box">
-            <div class="box-header">
-                <h1 class="box-title">Los sistemas actuales son:</h1>
-                <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                        <tr>
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">Sistemas actuales</h3>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered">
+                    <tr>
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Descripción</th>
+                            <th>Sensores</th>
                         </tr>
                          @foreach($sistemas as $sistema)
                             <tr>
                                 <td><a href="{{url('/viewsistema',$sistema->id)}}"> <span>{{$sistema->id}}</span></a></td>
                                 <td><a href="{{url('/viewsistema',$sistema->id)}}"> <span>{{$sistema->Nombre}}</span></a></td>
                                 <td><a href="{{url('/viewsistema',$sistema->id)}}"> <span>{{$sistema->Descripcion}}</span></a></td>
+                                <td><a href="{{url('/viewsistema',$sistema->id)}}"> <span>{{$sistema->Sensors->count()}}</span></a></td>
                             </tr>
                         @endforeach
-                    </table>
-                </div>
+                </table>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
 
 @section('footerspace')
