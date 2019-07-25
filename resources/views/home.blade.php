@@ -15,36 +15,42 @@
 @endsection
 
 @section('content')
+<div class="col-md-12">
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Panel de control de aplicación</h3>
+        </div>
+        <p>Espacio para el control de la aplicación IotView.</p>
+    </div>
 
-<div class="box">
-    <div class="box-header">
-        <h3 class="box-title">Manejo de la base de datos</h3>
+
+    <div class="box">
+        <div class="box-body">
+            <p>Control de la bases de datos y sus componentes:</p>
+            <a href="{!! url('users/') !!}" class="btn btn-app">
+                    <span class="badge bg-purple">{{$users}}</span>
+                    <i class="fa fa-users"></i> Usuarios
+                  </a>
+            <a href="{!! url('sistemas/') !!}" class="btn btn-app">
+                <span class="badge bg-green">{{$sistemas}}</span>
+                <i class="fa fa-edit"></i> Sistemas
+            </a>
+            <a href="{!! url('sensors/') !!}" class="btn btn-app">
+                <span class="badge bg-green">{{$sensores}}</span>
+                <i class="fa fa-play"></i> Sensores
+            </a>
+            <a href="{!! url('pids/') !!}" class="btn btn-app">
+                <span class="badge bg-green">{{$pids}}</span>
+                <i class="fa fa-repeat"></i> PIDs
+            </a>
+            <a href="{!! url('medidas/') !!}" class="btn btn-app">
+                <span class="badge bg-green">{{$medidas}}</span>
+                <i class="fa fa-barcode"></i> Medidas
+          </a>
+        </div>
     </div>
-    <div class="box-body">
-        <p>Control de la bases de datos y sus componentes:</p>
-        <a href="{!! url('users/') !!}" class="btn btn-app">
-                <span class="badge bg-purple">{{$users}}</span>
-                <i class="fa fa-users"></i> Usuarios
-              </a>
-        <a href="{!! url('sistemas/') !!}" class="btn btn-app">
-            <span class="badge bg-green">{{$sistemas}}</span>
-            <i class="fa fa-edit"></i> Sistemas
-        </a>
-        <a href="{!! url('sensors/') !!}" class="btn btn-app">
-            <span class="badge bg-green">{{$sensores}}</span>
-            <i class="fa fa-play"></i> Sensores
-        </a>
-        <a href="{!! url('pids/') !!}" class="btn btn-app">
-            <span class="badge bg-green">{{$pids}}</span>
-            <i class="fa fa-repeat"></i> PIDs
-        </a>
-        <a href="{!! url('medidas/') !!}" class="btn btn-app">
-            <span class="badge bg-green">{{$medidas}}</span>
-            <i class="fa fa-barcode"></i> Medidas
-      </a>
-    </div>
+
 </div>
-
 @endsection
 
 
