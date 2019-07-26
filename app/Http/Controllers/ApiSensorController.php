@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sistema;
-use App\medida;
-use App\sensor;
-use App\pid;
+use App\Medida;
+use App\Sensor;
+use App\Pid;
 
 class ApiSensorController extends Controller
 {
