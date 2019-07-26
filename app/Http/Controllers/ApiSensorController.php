@@ -8,10 +8,7 @@ use App\medida;
 use App\sensor;
 use App\pid;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-
-
-class ApiSistemaController extends Controller
+class ApiSensorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +17,7 @@ class ApiSistemaController extends Controller
      */
     public function index()
     {
-        $sistemas=Sistema::all();
-        return response()->json($sistemas);
+        //
     }
 
     /**
@@ -54,13 +50,13 @@ class ApiSistemaController extends Controller
     public function show($id)
     {
         try{
-            $sist=Sistema::findOrFail($id);
-            $sist->sensors;
-            return response()->json($sist);
+            $sens=Sensor::findOrFail($id);
+            $sens->pids;
+            return response()->json($sens);
             }
             catch(ModelNotFoundException $e)
                 {
-                    return response()->json(['error'=>true, 'msg'=>'Sistema no encontrado' ], 404);
+                    return response()->json(['error'=>true, 'msg'=>'Sesnsor no encontrado' ], 404);
                 }
     }
 
@@ -92,26 +88,29 @@ class ApiSistemaController extends Controller
         }
         try{
 
-            $sist=Sistema::findOrFail($ojo->id);
-            $sist->Var=$ojo->Var;
-            $sist->Mensaje=$ojo->Mensaje;
-            $sist->save();
-            foreach($ojo->sensors as $sen)
+            $sen=Sistema::findOrFail($ojo->id);
+            $sen->Var=$ojo->Var;
+            $sens->Mensaje=$ojo->Mensaje;
+            $sens->save();
+            foreach($ojo->pids as $pid)
             {
                 try{
-                    $senso=Sensor::findOrFail($sen->id);
-                    $senso->Var=$sen->Var;
-                    $senso->Mensaje=$sen->Mensaje;
-                    $senso->save();
+                    $pido=Sensor::findOrFail($pid->id);
+                    $pido->kp=$pid->kp;
+                    $pido->ki=$pid->ki;
+                    $pido->kd=$pid->kd;
+                    $pido->Ts=$pid->Ts;
+                    $pido->SetPoint=$pid->SetPoint;
+                    $pido->save();
                 }catch(ModelNotFoundException $e)
                 {
-                    return response()->json(['error'=>true, 'msg'=>'Sensor no encontrado' ], 404);
+                    return response()->json(['error'=>true, 'msg'=>'Pid no encontrado' ], 404);
                 }
             }
         return $id;
         }catch(ModelNotFoundException $e)
         {
-            return response()->json(['error'=>true, 'msg'=>'Sistema no encontrado' ], 404);
+            return response()->json(['error'=>true, 'msg'=>'Sensor no encontrado' ], 404);
         }
 
     }

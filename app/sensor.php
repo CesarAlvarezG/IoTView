@@ -24,6 +24,10 @@ class Sensor extends Model
         {
             return $this->hasMany('App\medida');
         }
+    public function pids()
+        {
+            return $this->hasMany('App\pid');
+        }
 
     public function sistema()
     {
