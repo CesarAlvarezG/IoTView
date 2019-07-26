@@ -28,24 +28,24 @@
         <div class="box-body">
             <div class="form-group">
             {!! Form::label('Kp', 'Kp:', ['class' => 'control-label']) !!}
-            {!! Form::number('Kp','1.0',['step'=>"0.01",'required'=>'autofocus']) !!}
+            {!! Form::number('Kp','1.0',['step'=>"0.0000001",'required'=>'autofocus']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('Ki', 'Ki:', ['class' => 'control-label']) !!}
-            {!! Form::number('Ki','0.0',['step'=>"0.01",'required'=>'autofocus']) !!}
+            {!! Form::number('Ki','0.0',['step'=>"0.0000001",'required'=>'autofocus']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('Kd', 'Kd:', ['class' => 'control-label']) !!}
-            {!! Form::number('Kd','0.0',['step'=>"0.01",'required'=>'autofocus']) !!}
+            {!! Form::number('Kd','0.0',['step'=>"0.0000001",'required'=>'autofocus']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('Ts', 'Tiempo muestreo:', ['class' => 'control-label']) !!}
-            {!! Form::number('Ts','1.0',['step'=>"0.01",'required'=>'autofocus']) !!}
+            {!! Form::number('Ts','1.0',['step'=>"0.0000001",'required'=>'autofocus']) !!}
 
         </div>
         <div class="form-group">
             {!! Form::label('SetPoint', 'SetPoint:', ['class' => 'control-label']) !!}
-            {!! Form::number('SetPoint','1.0',['step'=>"0.01",'required'=>'autofocus']) !!}
+            {!! Form::number('SetPoint','1.0',['step'=>"0.0000001",'required'=>'autofocus']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('sensor_id','Sensor:' , ['class' => 'control-label']) !!}
