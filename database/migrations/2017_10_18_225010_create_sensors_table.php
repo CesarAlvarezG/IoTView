@@ -22,7 +22,7 @@ class CreateSensorsTable extends Migration
             $table->float('Var',8,2)->nullable();
             $table->string('NMensaje',16)->nullable();
             $table->string('Mensaje',16)->nullable();
-
+            $table->float('SetPoint',8,2)->nullable();
             $table->integer('sistema_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('sistema_id')->references('id')->on('sistemas');

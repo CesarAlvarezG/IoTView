@@ -44,10 +44,6 @@
                         <td>{{ $data->Ts }}</td>
                     </tr>
                     <tr>
-                        <td>SetPoint</td>
-                        <td>{{ $data->SetPoint }}</td>
-                    </tr>
-                    <tr>
                         <td>Sensor</td>
                         <td>{{ $data->sensor_id }}</td>
                     </tr>

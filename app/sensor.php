@@ -14,6 +14,7 @@ class Sensor extends Model
         'Var',
         'NMensaje',
         'Mensaje',
+        'SetPoint',
         'sistema_id'
     ];
 

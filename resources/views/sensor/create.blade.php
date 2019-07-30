@@ -48,6 +48,12 @@
             {!! Form::text('Mensaje', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
+            {!! Form::label('SetPoint', 'SetPoint:', ['class' => 'control-label']) !!}
+            {!! Form::number('SetPoint','0.0',['step'=>"0.01",'required'=>'autofocus']) !!}
+
+        </div>
+
+        <div class="form-group">
             {!! Form::label('sistema_id','Sistema' , ['class' => 'control-label']) !!}
             <select name="sistema_id">
                 @foreach($sistemas as $sistema)

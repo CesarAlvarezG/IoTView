@@ -44,10 +44,6 @@
 
         </div>
         <div class="form-group">
-            {!! Form::label('SetPoint', 'SetPoint:', ['class' => 'control-label']) !!}
-            {!! Form::number('SetPoint','1.0',['step'=>"0.0000001",'required'=>'autofocus']) !!}
-        </div>
-        <div class="form-group">
             {!! Form::label('sensor_id','Sensor:' , ['class' => 'control-label']) !!}
             <select name="sensor_id">
                 @foreach($sensores as $sensor)

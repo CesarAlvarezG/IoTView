@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Pid;
 use App\medida;
@@ -61,9 +62,11 @@ class SitioController extends Controller
     {
         $sistema=Sistema::find($canal);
         $sensores = Sistema::find($canal)->sensors()->get();
+        $user = Auth::user();
+        $pids=Pid::All();
         if($sensores->count()>0)
         {
-            return view('PrivateGraf/PagePrivateSistema',['sistema'=>$sistema,'sensores'=>$sensores]);
+            return view('PrivateGraf/PagePrivateSistema',['sistema'=>$sistema,'sensores'=>$sensores,'user'=>$user,'pids'=>$pids]);
         }
         else{
             Session::flash('flash_message',"No hay sensores en el sistema");

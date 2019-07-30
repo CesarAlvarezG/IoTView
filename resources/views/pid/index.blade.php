@@ -43,7 +43,6 @@
                                 <th>Kd</th>
                                 <th>Ki</th>
                                 <th>Ts</th>
-                                <th>SetPoint</th>
                                 <th>Sensor</th>
                                 <th>Ver</th>
                                 <th>Editar</th>
@@ -67,9 +66,6 @@
                                     </td>
                                     <td>
                                         {{ $pid->Ts }}
-                                    </td>
-                                    <td>
-                                        {{ $pid->SetPoint }}
                                     </td>
                                     <td>
                                         {{ $pid->sensor_id }}
@@ -98,7 +94,6 @@
                                 <th>Kd</th>
                                 <th>Ki</th>
                                 <th>Ts</th>
-                                <th>SetPoint</th>
                                 <th>Sensor</th>
                                 <th>Ver</th>
                                 <th>Editar</th>

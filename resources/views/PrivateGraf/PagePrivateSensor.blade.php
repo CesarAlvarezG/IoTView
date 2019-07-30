@@ -38,6 +38,18 @@
                         <span class="description-text">{{$sensor->Mensaje}}</span>
                     </div>
                 </div>
+                @if($sensor->Tipo==="Sensor")
+                    <div class="col-md-4 border-rigth">
+                        <div class="description-box">
+                            <h5 class="description-header"><b>SetPoint:</b></h5>
+                                <span class="description-text"> {{$sensor->SetPoint}}</span>
+                        </div>
+                    </div>
+                @if($user->role==="1")
+                <a href="{{ route('sensors.edit', $sensor->id) }}" class="btn btn-primary"><i class="fa fa-fw fa-pencil"></i></a>
+                @endif
+                @endif
+
             </div>
 
         </div>

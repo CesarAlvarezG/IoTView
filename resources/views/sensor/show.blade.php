@@ -56,7 +56,10 @@
                         <td>Mensaje</td>
                         <td>{{ $data->Mensaje }}</td>
                     </tr>
-
+                    <tr>
+                        <td>SetPoint</td>
+                        <td>{{ $data->SetPoint }}</td>
+                    </tr>
 
                     <tr>
                         <td>Created At</td>

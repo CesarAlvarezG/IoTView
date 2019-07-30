@@ -24,7 +24,6 @@ class PidController extends Controller
         'Ki' => 'required',
         'Kd' => 'required',
         'Ts' => 'required',
-        'SetPoint' => 'required',
         'sensor_id'=>'required',
         ]);
         $input = $request->all();
@@ -72,7 +71,6 @@ class PidController extends Controller
                 'Ki' => 'required',
                 'Kd' => 'required',
                 'Ts' => 'required',
-                'SetPoint' => 'required',
         ]);
         $input = $request->all();
         $pid->fill($input)->save();

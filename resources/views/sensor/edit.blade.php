@@ -43,7 +43,10 @@
                 {!! Form::label('Mensaje', 'Mensaje', ['class' => 'control-label']) !!}
                 {!! Form::text('Mensaje', null, ['class' => 'form-control']) !!}
             </div>
-
+            <div class="form-group">
+                {!! Form::label('SetPoint', 'SetPoint:', ['class' => 'control-label']) !!}
+                {!! Form::number('SetPoint',null,['step'=>"0.01",'required'=>'autofocus']) !!}
+            </div>
 
             <div class="form-group">
                 {!! Form::label('sistema_id','Sistema' , ['class' => 'control-label']) !!}
