@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('Kd', 'Kd:', ['class' => 'control-label']) !!}
-            {!! Form::number('Kd','0.0',['step'=>"0.0000001",'required'=>'autofocus']) !!}
+            {!! Form::number('Kd','0.0',['step'=>"0.0000000001",'required'=>'autofocus']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('Ts', 'Tiempo muestreo:', ['class' => 'control-label']) !!}

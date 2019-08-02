@@ -22,19 +22,19 @@
         <div class="box-body">
             <div class="form-group">
                 {!! Form::label('Kp', 'Kp:', ['class' => 'control-label']) !!}
-                {!! Form::number('Kp',$data->valor  ,['step'=>"0.01",'required'=>'autofocus']) !!}
+                {!! Form::number('Kp',$data->valor  ,['step'=>"0.0000001",'required'=>'autofocus']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('Ki', 'Ki:', ['class' => 'control-label']) !!}
-                {!! Form::number('Ki',$data->valor  ,['step'=>"0.01",'required'=>'autofocus']) !!}
+                {!! Form::number('Ki',$data->valor  ,['step'=>"0.0000001",'required'=>'autofocus']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('Kd', 'Kd:', ['class' => 'control-label']) !!}
-                {!! Form::number('Kd',$data->valor  ,['step'=>"0.01",'required'=>'autofocus']) !!}
+                {!! Form::number('Kd',$data->valor  ,['step'=>"0.0000000001",'required'=>'autofocus']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('Ts', 'Ts:', ['class' => 'control-label']) !!}
-                {!! Form::number('Ts',$data->valor  ,['step'=>"0.01",'required'=>'autofocus']) !!}
+                {!! Form::number('Ts',$data->valor  ,['step'=>"0.0000001",'required'=>'autofocus']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('sensor_id','Sensor' , ['class' => 'control-label']) !!}
