@@ -68,7 +68,7 @@ var plot{{$sensor->id}} = $.plot("#interactive{{$sensor->id}}", [ getData{{$sens
             },
 			yaxis: {
 				min: 0,
-				max: 100,
+				max: 3,
                 show: true
 			},
 			xaxis: {
