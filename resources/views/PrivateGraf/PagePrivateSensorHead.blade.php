@@ -2,7 +2,7 @@
 var data{{$sensor->id}} = [], totalPoints{{$sensor->id}} = 1000;
 
 var sensorData{{$sensor->id}}=0;
-
+var ymax{{$sensor->id}}=100;
 
 function loadData{{$sensor->id}}()
     {
@@ -33,8 +33,8 @@ function getData{{$sensor->id}}() {
 
 				if (y < 0) {
 					y = 0;
-				} else if (y > 100) {
-					y = 100;
+				} else if (y > ymax{{$sensor->id}}) {
+					y = ymax{{$sensor->id}};
 				}
 
 				data{{$sensor->id}}.push(y);
@@ -68,7 +68,7 @@ var plot{{$sensor->id}} = $.plot("#interactive{{$sensor->id}}", [ getData{{$sens
             },
 			yaxis: {
 				min: 0,
-
+                max: ymax{{$sensor->id}},
                 show: true
 			},
 			xaxis: {
